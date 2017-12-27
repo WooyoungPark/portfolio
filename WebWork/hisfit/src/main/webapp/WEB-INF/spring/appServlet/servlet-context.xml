@@ -21,9 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- 패키지 관리 (, 콤마로 구분)  -->
-	<context:component-scan base-package=	"com.portfolio.hisfit, 
-											 com.portfolio.hisfit.product" />
+	<context:component-scan base-package=	"com.portfolio" />
 	
 
     <beans:bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
