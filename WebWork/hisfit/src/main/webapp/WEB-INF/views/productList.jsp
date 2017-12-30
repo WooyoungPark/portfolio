@@ -18,7 +18,7 @@
 </body>
 <div class="container">
 	<div>
-		<h4>SHIRTS</h4>
+		<h4>${flag}</h4>
 		<jsp:include page="bestItem/bestItem.jsp"></jsp:include>
 		<div class="row">
 			<p class="navbar-text margin0">
@@ -145,5 +145,12 @@
 		</div>
 	</div>
 </div>
+<script src="resources/JavaScript/menu/selectBestItem.js"></script>
+<script>
+	$(document).ready(function() {
+		useBestItem("${BestDIV}");
+	});
+</script>
 <jsp:include page="footer.jsp"></jsp:include>
+
 </html>

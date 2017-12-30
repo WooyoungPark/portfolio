@@ -5,8 +5,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="about">
-					<img src="images/logo.png" class="img-responsive center-block"
-						alt="">
+					<img src="images/logo.png" class="img-responsive center-block" alt="">
 					<p>Bootstrap Footer example snippets with CSS, Javascript and
 						HTML. Code example of bootstrap-3 footer using HTML, Javascript,
 						jQuery, and CSS. 5 Beautiful and Responsive Footer Templates. Pin
