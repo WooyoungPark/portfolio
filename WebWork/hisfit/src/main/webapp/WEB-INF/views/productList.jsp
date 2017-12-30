@@ -14,11 +14,11 @@
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
-	<jsp:include page="menu/menuBar.jsp"></jsp:include>
+	<jsp:include page="publicDiv/menuBar.jsp"></jsp:include>
 </body>
 <div class="container">
 	<div>
-		<h4>${flag}</h4>
+		<h4>${title}</h4>
 		<jsp:include page="bestItem/bestItem.jsp"></jsp:include>
 		<div class="row">
 			<p class="navbar-text margin0">

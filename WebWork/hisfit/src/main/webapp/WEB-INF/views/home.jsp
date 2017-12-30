@@ -14,7 +14,7 @@
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
-	<jsp:include page="menu/menuBar.jsp"></jsp:include>
+	<jsp:include page="publicDiv/menuBar.jsp"></jsp:include>
 	<div class="container" style="height: 800px; background: hotpink;">
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">

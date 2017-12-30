@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 	@RequestMapping("/productList")
 	public String product(Model model, HttpServletRequest request) {
-		String strFlag;
-		strFlag = request.getParameter("strFlag"); // Get Menuflag
+		String strTitle;
+		strTitle = request.getParameter("strFlag"); // Get Menuflag
 		boolean bBestDIV;
-		switch (strFlag) {
+		switch (strTitle) {
 		case "best50":
 			bBestDIV = true;
 			break;
@@ -55,7 +55,7 @@ public class ProductController {
 			break;
 
 		}
-		model.addAttribute("flag", strFlag);
+		model.addAttribute("flag", strTitle);
 		model.addAttribute("BestDIV", bBestDIV);
 		return "productList";
 	}
