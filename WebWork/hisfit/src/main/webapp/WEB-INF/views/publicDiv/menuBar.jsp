@@ -22,8 +22,8 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">LOGIN <span class="sr-only">(current)</span></a></li>
 					<li><a href="#">JOIN US</a></li>
-					<li><a href="#">CART&nbsp;<span class="badge">0</span></a></li>
-					<li><a href="#">ORDER</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(100);">CART&nbsp;<span class="badge">0</span></a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(101);">ORDER</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-expanded="false">MY
 							PAGE <span class="caret"></span>
@@ -421,19 +421,18 @@
 							</ul>
 						</ul></li>
 
-					<li class="active"><a href="#">BEST 50 <span
-							class="sr-only">(current)</span></a></li>
-				<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(0);">NEW Discount</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(1);">OUTWEAR</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(2);">TOP</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(3);">SHIRTS</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(4);">PANTS</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(5);">SHOES</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(6);">BAG</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(7);">ACC</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(8);">SALE</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(9);">ONLY ONE</a></li>
-					<li><a name = "menuLi" href="javascript:void(0);" onclick="selectMenu(10);">COUPLE</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(0);">BEST 50 <span class="sr-only">(current)</span></a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(1);">NEW Discount</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(2);">OUTWEAR</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(3);">TOP</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(4);">SHIRTS</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(5);">PANTS</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(6);">SHOES</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(7);">BAG</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(8);">ACC</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(9);">SALE</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(10);">ONLY ONE</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(11);">COUPLE</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -442,7 +441,7 @@
 	</nav>
 	<form action="hisfit/productList" method="get" id="menuForm"></form>
 </div>
-<script src="resources/JavaScript/menu/selectProduct.js"></script>
+<script src="resources/JavaScript/menu/category.js"></script>
 <script type="text/javascript">
 	$('ul.nav li.dropdown').hover(
 			function() {

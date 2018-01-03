@@ -3299,7 +3299,79 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 .fontSize8 {
 	font-size: 8px;
 }
+.fontSize12{
+	font-size: 12px;
+}
+.BasicColor{
+	color: #5A5A5A;
+}
+.basicButton{
+	border-radius: 5px;
+	background-color: #fff;
+	border:1px solid #E3E3E3;
+	font-size: 11px;
+}
+.blackButton{
+	border-radius: 5px;
+	background-color: #5A5A5A;
+	border:1px solid #5A5A5A;
+	color : #fff;
+	font-size: 11px;
+}
+.optionButton{
+	margin-left: 20px;
+	padding: 8px;
+	height : 30px;
+	border : 1px solid;
+}
+.orderBtn{
+	height : 45px;
+	width : 160px;
+}
+.setPadding{
+	padding-left: -160px;
+}
+.cartListDiv{
+	height : 78px;
+	display : table;
+}
+.fullWidth{
+	width: 100%;
+}
+.cartListItem{
+	display : table-cell;
+	vertical-align: middle;
+}
+.cartItemWidth{
+	width: 80px;
+}
 
+.btn-group-margin{
+	float: left;
+	margin-left : 0px;
+}
+.cartLastRow{
+	display : table;
+	margin : 0;
+	height : 30px;
+	width : 100%;
+}
+.cartBtnRow{
+	display : table;
+	margin : 0;
+	height : 60px;
+	width : 100%;
+}
+.alignCenter{
+	width : 100%;
+	text-align: center;
+}
+.textAlign-center{
+	text-align: center;
+}
+.listItemColor{
+	background-color: #FAFAFA;
+}
 .leftBorder {
 	border: transparent;
 	border-left: 1px solid;
@@ -3414,7 +3486,7 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 
 .btn-primary {
 	color: #fff;
-	background-color: #337ab7;
+	background-color: #ffffff;
 	border-color: #2e6da4;
 }
 
@@ -4265,9 +4337,12 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	line-height: 1.42857143;
 	border: 1px solid transparent;
 	border-radius: 4px 4px 0 0;
+	background-color: #5A5A5A;
+	color:white;
 }
 
 .nav-tabs>li>a:hover {
+	color: #5A5A5A;
 	border-color: #eee #eee #ddd;
 }
 
@@ -5016,7 +5091,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	padding: 8px 15px;
 	margin-bottom: 20px;
 	list-style: none;
-	background-color: #f5f5f5;
+	background-color: #ffffff;
 	border-radius: 4px;
 }
 

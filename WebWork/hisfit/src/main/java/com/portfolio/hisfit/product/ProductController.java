@@ -10,52 +10,64 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 	@RequestMapping("/productList")
 	public String product(Model model, HttpServletRequest request) {
+		int nCategory = Integer.parseInt(request.getParameter("nCategory")); // Get Menuflag
 		String strTitle;
-		strTitle = request.getParameter("strFlag"); // Get Menuflag
 		boolean bBestDIV;
-		switch (strTitle) {
-		case "best50":
+
+		switch (nCategory) {
+		case 0:
+			strTitle = "BEST 50";
 			bBestDIV = true;
 			break;
-		case "NEW Discount":
+		case 1:
+			strTitle = "NEW Discount";
 			bBestDIV = false;
 			break;
-		case "OUTWEAR":
+		case 2:
+			strTitle = "OUTWEAR";
 			bBestDIV = true;
 			break;
-		case "TOP":
+		case 3:
+			strTitle = "TOP";
 			bBestDIV = true;
 			break;
-		case "SHIRTS":
+		case 4:
+			strTitle = "SHIRTS";
 			bBestDIV = true;
 			break;
-		case "PANTS":
+		case 5:
+			strTitle = "PANTS";
 			bBestDIV = true;
 			break;
-		case "SHOES":
+		case 6:
+			strTitle = "SHOES";
 			bBestDIV = true;
 			break;
-		case "BAG":
+		case 7:
+			strTitle = "BAG";
 			bBestDIV = true;
 			break;
-		case "ACC":
+		case 8:
+			strTitle = "ACC";
 			bBestDIV = true;
 			break;
-		case "SALE":
+		case 9:
+			strTitle = "SALE";
 			bBestDIV = false;
 			break;
-		case "ONLY&nbsp;ONE":
+		case 10:
+			strTitle = "ONLY ONE";
 			bBestDIV = false;
 			break;
-		case "COUPLE":
+		case 11:
+			strTitle = "COUPLE";
 			bBestDIV = false;
 			break;
 		default:
+			strTitle = "";
 			bBestDIV = false;
-			break;
-
 		}
-		model.addAttribute("flag", strTitle);
+		model.addAttribute("title", strTitle);
 		model.addAttribute("BestDIV", bBestDIV);
 		return "productList";
 	}

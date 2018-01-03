@@ -7,11 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
 <link rel="stylesheet"
 	href="resources/bootstrap/css/bootstrap-theme.min.css">
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
 	<jsp:include page="publicDiv/menuBar.jsp"></jsp:include>
