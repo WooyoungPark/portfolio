@@ -33,9 +33,10 @@
 						<tr>
 						
 							<th style="width: 30px;" class ="textAlign-center">
-								<input type="checkbox" class="form-check-input" id="allCheck">
+								<input id = "allCheck" type="checkbox" class="form-check-input" id="allCheck"
+								onchange="allCheck(this)">
 							</th>
-							<th style="width: 30px;"  class ="textAlign-center">이미지</th>
+							<th style="width: 100px;"  class ="textAlign-center">이미지</th>
 							<th style="width: 350px;" class ="textAlign-center">상품정보</th>
 							<th style="width: 80px;" class ="textAlign-center">판매가</th>
 							<th style="width: 120px;" class ="textAlign-center">수량</th>
@@ -73,7 +74,7 @@
 								<div class="cartListDiv alignCenter">
 									<div class="cartListItem">
 										<input type="checkbox" class="cartListItem form-check-input"
-											id="allCheck">
+											name = "itemCheck">
 									</div>
 								</div>
 							</td>
@@ -182,7 +183,7 @@
 								<div class="cartBtnRow ">
 									<div class=cartListItem>
 										<div class="btn-group fontSize8 pull-left">
-											<button class="btn blackButton optionButton"
+											<button class="btn blackButton optionButton" onclick="deleteCheck()"
 												style="font-size: 11px; margin-right: 3px;">삭제하기</button>
 											<button class="btn basicButton optionButton"
 												style="font-size: 11px; margin-right: 3px;">관심상품등록</button>
@@ -366,7 +367,20 @@
 	});
 	
 	function subPrice(){
+		var totalPrice = 0;
+		var fee = 0;
+		var obj = $("span[name=objAllPrice");
+		obj.each(function(idx){
+			var getText = $(this).text();
+			getText = deleteComma(getText);
+			totalPrice +=  Number(getText);
+		});
+		var result = setComma(totalPrice) + '원';
 		
+		var objTotalPrice = $("span[name=objTotalPrice]");
+		objTotalPrice.each(function(idx){
+			objTotalPrice.eq(idx).text(result);
+		});
 	}
 	
 	function calTotal(obj){
@@ -374,8 +388,9 @@
 		var tr = $(obj).parent().parent().parent().parent().parent();
 		var nPrice = deleteComma(tr.find("span[name=objPrice]").text());
 		var allPrice = nPrice * nCnt;
-		allPrice = setComma(allPrice);
-		tr.find("span[name=objAllPrice]").text(allPrice+'원');
+		allPrice = setComma(allPrice) + '원';
+		tr.find("span[name=objAllPrice]").text(allPrice);
+		subPrice();
 	}
 	
 	function deleteRow(obj) {
@@ -389,14 +404,27 @@
 			var result = getText - targetPrice;
 			result = setComma(result);
 			result += '원';
-			
 			objTotalPrice.eq(idx).text(result);
 		});
-
 		tr.remove();
-		
 	}
 	
+	function allCheck(obj){
+		var bChecked = $(obj).is(":checked");
+		$('input[name=itemCheck]').each(function(idx){
+			this.checked = bChecked;
+		});
+	}	
+	
+	function deleteCheck(){
+		$('input[name=itemCheck]').each(function(dix){
+			if(this.checked){
+				var tr = $(this).parent().parent().parent().parent();
+				tr.remove();
+				subPrice();
+			}
+		});
+	}
 	
 </script>
 </html>
