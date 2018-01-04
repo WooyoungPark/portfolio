@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <div id = "bestItemDIV" class="row" style="margin-bottom: 70px;">
 	<div class="col-md-3">
 		<div class="fullWidth topBorder textCenter topMargin">BEST
