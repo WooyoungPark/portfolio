@@ -278,3 +278,6 @@
 		</tr>
 	</tbody>
 </table>
+<script>
+$('input[name=itemCount]').bootstrapNumber();
+</script>

@@ -3311,6 +3311,13 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	border:1px solid #E3E3E3;
 	font-size: 11px;
 }
+.grayButton{
+	border-radius: 5px;
+	background-color: #fff;
+	border:1px solid #7D7D7D;
+	color: #7D7D7D;
+	font-size: 11px;
+}
 .blackButton{
 	border-radius: 5px;
 	background-color: #5A5A5A;
@@ -3342,10 +3349,17 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	display : table-cell;
 	vertical-align: middle;
 }
+.tableCenter{
+	display : table-cell;
+	vertical-align: middle;
+}
 .cartItemWidth{
 	width: 80px;
 }
-
+.tableDiv{
+	display : table; 
+	width: 100%;
+}
 .btn-group-margin{
 	float: left;
 	margin-left : 0px;
@@ -3390,7 +3404,120 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	border-top: 1px solid;
 	border-color: #E8E8E8;
 }
-
+.btn-custom{
+	font-size : 12px;
+	background-color: #F8F8F8;
+	border: 1px solid #D5D5D5;
+	padding-left : 4px;
+	padding-right : 4px;
+	padding-top : 3px;
+	padding-bottom : 3px;
+}
+.myPageName{
+	width:100%;
+	padding-bottom : 4px;
+	margin-bottom : 8px; 
+	border-bottom: 1px solid #DDDDDD;
+}
+.myPageRow{
+	padding-left : 20px;
+	display:table-cell;
+	vertical-align: middle;
+}
+.myPage-Rank{
+	display : table; 
+	height: 90px; 
+	border: 1px solid #DDDDDD; 
+	margin-top : 20px;
+	width:100%;
+}
+.myPage-Rank-info{
+	display : table; 
+	height: 60px;
+	width:150px;
+	border-right:1px solid #DDDDDD;
+}
+.myPage-Rank-title{
+	width: 200px; 
+	height:70px; 
+}
+.myPage-details{
+	display : table;
+	height:110px;
+	width : 100%;
+	background-color : #FCFCFC;
+	border : 1px solid #DDDDDD;
+	margin-top:10px;
+	padding: 20px;
+}
+.myPage-2div{
+	display : table;
+	height:110px;
+	width : 100%;
+	border : 1px solid #DDDDDD;
+	margin-top:10px;
+	padding: 20px;
+}
+.myPage-2div div{
+	width:50%;
+}
+.myPageDiv-sideBorderNone{
+	width : 100px;
+	border-top : 1px solid #DDDDDD;
+	border-bottom : 1px solid #DDDDDD;
+	background-color: #F8F8F8;
+	display : table-cell;
+}
+.myPageDiv-center{
+	width : 80px;
+	border : 1px solid #DDDDDD;
+	border-right : 1px solid #FFFFFF;
+	background-color : #F8F8F8;
+	display : table-cell;
+	padding : 8px;
+}
+.myTable{
+	width : 100%;
+	height: 100%;
+	border-top:2px solid #000;
+	font-size: 12px;
+}
+.myTable-coupon{
+	width:33%;
+}
+.myTable th{
+	text-align: center;
+	height:30px;
+	background-color: #FCFCFC;
+	border-bottom:1px solid #DDDDDD;
+}
+.myTable td{
+	height: 30px;
+	border-bottom:1px solid #DDDDDD;
+	text-align: center;
+}
+.detailsTable{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.detailsTable button{
+	border-radius: 5px;
+	background-color: #fff;
+	border:1px solid #7D7D7D;
+	color: #7D7D7D;
+	font-size: 9px;
+	height : 25px;
+	padding: 5px;
+	margin-right:20px;
+}
+.detailsTable tr{
+	height:25px;
+}
+.horizontal{
+	display: table-cell;
+	vertical-align: middle;
+	margin-left: 10px;
+}
 .borderTransparent {
 	border: transparent;
 }
@@ -3437,8 +3564,11 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 .btn:active, .btn.active {
 	background-image: none;
 	outline: 0;
-	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	background-color: #757575;
+	border : 1px solid #757575;
+	color: #fff;
+	/* -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125); */
 }
 
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
@@ -5126,7 +5256,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	padding: 6px 12px;
 	margin-left: -1px;
 	line-height: 1.42857143;
-	color: #337ab7;
+	color: #5A5A5A;
 	text-decoration: none;
 	background-color: #fff;
 	border: 1px solid #ddd;

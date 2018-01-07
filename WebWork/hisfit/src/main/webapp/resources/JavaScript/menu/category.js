@@ -11,11 +11,13 @@ function selectMenu(index) {
 		case 101:
 			target = "order";
 			break;
+		case 102:
+			target = "mypage";
+			break;
 		default:
 			// Error Exception
 			break;
 		}
 	}
 	location.href = target;
-
 }

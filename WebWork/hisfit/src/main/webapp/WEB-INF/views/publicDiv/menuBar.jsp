@@ -25,7 +25,7 @@
 					<li><a href="javascript:void(0);" onclick="selectMenu(100);">CART&nbsp;<span class="badge">0</span></a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(101);">ORDER</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-expanded="false">MY
+						data-toggle="dropdown" role="button" aria-expanded="false" onclick="selectMenu(102)">MY
 							PAGE <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu" role="menu">

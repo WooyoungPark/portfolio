@@ -4,7 +4,7 @@ $(document).ready(function() {// 페이지 랜더링 완료 후 실행 함수
 	SetLocale($("span[name=objTotalPrice]"));
 });
 
-$('input[name=itemCount]').bootstrapNumber();
+
 
 function setComma(number) {
 	// 정규표현식 : (+- 존재하거나 존재 안함, 숫자가 1개 이상), (숫자가 3개씩 반복)
