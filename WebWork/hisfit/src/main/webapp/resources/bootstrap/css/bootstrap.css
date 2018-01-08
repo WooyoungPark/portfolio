@@ -3530,6 +3530,80 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	text-align: center;
 }
 
+.loginForm{
+	width: 400px;
+	border-radius: 25px;
+	border: 1px solid #DDDDDD;
+	margin-top:50px;
+	margin-bottom:10px;
+	margin-right: auto; 
+	margin-left: auto;
+	padding-top:35px;
+	padding-bottom:35px;
+	text-align: center;
+}
+
+.loginForm table{
+	width:300px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.loginForm div{	
+	width: 300px;
+	height:300px;
+	background-color:gray;
+	text-align: center;
+	vertical-align: middle;
+}
+.loginForm span{
+	font-size: 16px;
+}
+.loginForm button{
+	border: none;
+    color: white;
+    text-decoration: none;
+	width:100%;
+	height:50px;
+	font-size:12px;
+	background-image: none;
+}
+.loginForm .login{
+	background-color:#000;
+	color:#FFF;
+}
+.loginForm .new{
+	background-color:#8F8F8F;
+	color:#FFF;	
+}
+.loginForm input{
+	width:100%;
+	height:35px;
+	font-size: 11px;
+	padding-left:15px;
+}
+.loginForm a{
+	font-size:12px;
+	color: #000000;
+}
+.loginForm .sbtn{
+	height:35px;
+	width:140px;
+}
+.loginForm .naver{
+	background-color: #25C625;
+}
+.loginForm .kakao{
+	background-color: #FAE601;
+}
+.loginForm .face{
+	background-color: #536FAC;
+}
+.loginForm td{
+	padding-top:5px;
+	padding-bottom:5px;
+	width:50%;
+}
+
 .btn {
 	display: inline-block;
 	margin-bottom: 0;
