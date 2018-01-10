@@ -3603,7 +3603,72 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	padding-bottom:5px;
 	width:50%;
 }
-
+.joinForm{
+	width:100%;
+	margin-top:25px;
+	font-size: 12px;
+}
+.joinForm caption{
+	font-size: 15px;
+	color:black;
+	margin-left:3px;
+}
+.joinForm .sub{
+	width:160px;
+	height:40px;
+	padding-left:20px;
+	border:1px solid #DDDDDD;
+	background-color:#FBFBFB;
+}
+.joinForm .body{
+	padding-left:15px;
+	padding-right:15px;
+	border:1px solid #DDDDDD;
+}
+.joinForm .body span{
+	font-size: 12px;
+	margin-left:3px;
+}
+.joinForm. select{
+	height:25px;
+	font-size: 12px;
+}
+.joinForm .body input[type=text]{
+	height:25px;
+	font-size: 11px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.joinForm textarea{
+	resize: none;
+	rows=7;
+	width: 100%; 
+	text-align: left;"
+}
+.joinForm button{
+	width : 160px;
+	height : 100%;
+	border: none;
+    color: white;
+    text-decoration: none;
+	background-image: none;
+	margin:2px;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.joinForm .okBtn{
+	background-color: #363636;
+}
+.joinForm .cancelBtn{
+	background-color: #9B9B9B;
+}
+.joinForm div{
+	width:100%;
+	height:50px;
+	text-align: center;
+	margin-top:30px;
+}
 .btn {
 	display: inline-block;
 	margin-bottom: 0;

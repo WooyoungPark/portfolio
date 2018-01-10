@@ -48,7 +48,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><a href="">아이디찾기</a> <a href="">비밀번호찾기</a></td>
+						<td><a href="">아이디찾기</a> | <a href="">비밀번호찾기</a></td>
 					</tr>
 					<tr>
 						<td colspan="2">
