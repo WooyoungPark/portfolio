@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+	 <select id="findById" resultType="com.portfolio.hisfit.userinfo.User">
+	   	select * from userinfo where id = #{id}
+	 </select>
+  
+  	<insert id="createUser">
+	  insert into userinfo (ID,PWD,PWDQ,PWDA,NAME,ZIP,ADD1,ADD2,TEL,PHONE,EMAIL)
+	  values (#{id},#{pwd},#{pwdQ},#{pwdA},#{name},#{zip},#{add1},#{add2},#{tel},#{phone},#{email})
+	</insert>
+	
+	<update id="updateUser">
+	  update userinfo set
+	    id = #{id},
+	    pwd = #{pwd},
+	    pwdQ = #{pwdQ},
+	    pwdA = #{pwdA},
+	    name = #{name},
+	    zip = #{zip},
+	    add1 = #{add1},
+	    add2 = #{add2},
+	    tel = #{tel},
+	    phone = #{phone},
+	    email = #{email}
+	  where id = #{id}
+	</update>
+	
+</mapper>
