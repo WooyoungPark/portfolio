@@ -91,6 +91,23 @@ function allCheck(obj) {
 	});
 }
 
+function allAgree(obj) {
+	var bChecked = $(obj).is(":checked");
+	$('input[name=chkAgree]').each(function(idx) {
+		this.checked = bChecked;
+	});
+}
+function setDomain(obj){
+	var strSelect = $(obj).val();
+	if(strSelect == 'none'){
+		console.log('select');
+		$('#objEmail_domain').attr("readonly", false);
+		$('#objEmail_domain').val('');
+	}else{
+		$('#objEmail_domain').attr("readonly", true);
+		$('#objEmail_domain').val($(obj).val());
+	}
+}
 function deleteCheck() {
 	$('input[name=itemCheck]').each(function(dix) {
 		if (this.checked) {

@@ -38,17 +38,6 @@
 			<caption><strong>기본정보</strong></caption>
 			<tr>
 				<td class = "sub">
-					<span>회원구분</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="radio" name = "memberType" value="개인" checked="checked"><span>개인회원</span>&nbsp;&nbsp;
-					<input type="radio" name = "memberType" value="사업자"><span>사업자회원</span>&nbsp;&nbsp;
-					<input type="radio" name = "memberType" value="외국인"><span>외국인회원(foreigner)</span>
-				</td>
-			</tr>
-			<tr>
-				<td class = "sub">
 					<span>아이디</span>
 					<img src="resources/user/ico_required.png">
 				</td>
@@ -81,21 +70,21 @@
 				</td>
 				<td class="body" id = "objPDW_qes">
 					<select style="height:25px;">
-						<option value = "0">기억에&nbsp;남는&nbsp;추억의&nbsp;장소는?</option>
-						<option value = "1">자신의&nbsp;인생&nbsp;좌우명은?</option>
-						<option value = "2">자신의&nbsp;보물&nbsp;제1호는?</option>
-						<option value = "3">가장&nbsp;기억에&nbsp;남는&nbsp;선생님&nbsp;성함은?</option>
-						<option value = "4">타인이&nbsp;모르는&nbsp;자신만의&nbsp;신체비밀이&nbsp;있다면?</option>
-						<option value = "5">추억하고&nbsp;싶은&nbsp;날짜가&nbsp;있다면?</option>
-						<option value = "6">받았던&nbsp;선물&nbsp;중&nbsp;기억에&nbsp;남는&nbsp;독특한&nbsp;선물은?</option>
-						<option value = "7">유년시절&nbsp;가장&nbsp;생각나는&nbsp;친구&nbsp;이름은?</option>
-						<option value = "8">인상&nbsp;깊게&nbsp;읽은&nbsp;책&nbsp;이름은?</option>
-						<option value = "9">읽은&nbsp;책&nbsp;중에서&nbsp;좋아하는&nbsp;구절이&nbsp;있다면?</option>
-						<option value = "10">자신이&nbsp;두번째로&nbsp;존경하는&nbsp;인물은?</option>
-						<option value = "11">친구들에게&nbsp;공개하지&nbsp;않은&nbsp;어릴&nbsp;적&nbsp;별명이&nbsp;있다면?</option>
-						<option value = "12">초등학교&nbsp;때&nbsp;기억에&nbsp;남는&nbsp;짝꿍의&nbsp;이름은?</option>
-						<option value = "13">다시&nbsp;태어나면&nbsp;되고&nbsp;싶은&nbsp;것은?</option>
-						<option value = "14">내가&nbsp;좋아하는&nbsp;캐릭터는?</option>
+						<option value = "0">기억에 남는 추억의 장소는?</option>
+						<option value = "1">자신의 인생 좌우명은?</option>
+						<option value = "2">자신의 보물 제1호는?</option>
+						<option value = "3">가장 기억에 남는 선생님 성함은?</option>
+						<option value = "4">타인이 모르는 자신만의 신체비밀이 있다면?</option>
+						<option value = "5">추억하고 싶은 날짜가 있다면?</option>
+						<option value = "6">받았던 선물 중 기억에 남는 독특한 선물은?</option>
+						<option value = "7">유년시절 가장 생각나는 친구 이름은?</option>
+						<option value = "8">인상 깊게 읽은 책 이름은?</option>
+						<option value = "9">읽은 책 중에서 좋아하는 구절이 있다면?</option>
+						<option value = "10">자신이 두번째로 존경하는 인물은?</option>
+						<option value = "11">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
+						<option value = "12">초등학교 때 기억에 남는 짝꿍의 이름은?</option>
+						<option value = "13">다시 태어나면 되고 싶은 것은?</option>
+						<option value = "14">내가 좋아하는 캐릭터는?</option>
 					</select>
 				</td>
 			</tr>
@@ -200,18 +189,18 @@
 				<td class="body">
 					<input type="text" id = "objEmail_ID" value = ""> 	
 					<span>@</span>
-					<input type="text" id = "objEmail_domain" value = ""> 	
-					<select id = "objDomain_List" style="height:25px;">
-						<option value="010">-이메일&nbsp;선택-</option>
-						<option value="011">naver.com</option>
-						<option value="016">daum.net</option>
-						<option value="017">nate.com</option>
-						<option value="018">hotmail.com</option>
-						<option value="019">yahoo.com</option>
-						<option value="019">empas.com</option>
-						<option value="019">korea.com</option>
-						<option value="019">gmail.com</option>
-						<option value="019">직접입력</option>
+					<input type="text" id = "objEmail_domain" value = "" readonly="readonly"> 	
+					<select id = "objDomain_List" style="height:25px;" onchange="setDomain(this)">
+						<option value="null">-이메일&nbsp;선택-</option>
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="nate.com">nate.com</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="yahoo.com">yahoo.com</option>
+						<option value="empas.com">empas.com</option>
+						<option value="korea.com">korea.com</option>
+						<option value="gmail.com">gmail.com</option>
+						<option value="none">직접입력</option>
 					</select>
 				</td>
 			</tr>
@@ -280,7 +269,7 @@
 			<caption><strong>전체동의</strong></caption>
 			<tr>
 				<td colspan="2" class="sub">
-					<input type="checkbox">
+					<input type="checkbox" onchange="allAgree(this)">
 					<span><strong>이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</strong></span>
 				</td>
 
@@ -532,7 +521,7 @@
 								</textarea>
 								<br>
 								<span>이용약관에 동의하십니까?&nbsp;&nbsp;</span>
-								<input type="checkbox" id="chkAgree1"><span><strong>동의함</strong></span>
+								<input type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
 							</td>
 							
 							<td style="width:50%; padding:10px;">
@@ -560,7 +549,7 @@
 								</textarea>
 								<br>
 								<span>개인정보 수집 및 이용에 동의하십니까?&nbsp;&nbsp;</span>
-								<input type="checkbox" id="chkAgree2"><span><strong>동의함</strong></span>
+								<input type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
 							</td>
 						</tr>
 					</table>
@@ -580,7 +569,7 @@
 					</textarea>
 					<br>
 					<span>이메일 수신을 동의하십니까?&nbsp;&nbsp;</span>
-					<input type="checkbox" id = "chkAgree3"><span><strong>동의함</strong></span>
+					<input type="checkbox" name = "chkAgree"><span><strong>동의함</strong></span>
 				</td>
 			</tr>
 			<tr>
@@ -595,5 +584,7 @@
 	</div>
 </body>
 <jsp:include page="publicDiv/footer.jsp"></jsp:include>
-
+<script type="text/javascript">
+	
+</script>
 </html>
