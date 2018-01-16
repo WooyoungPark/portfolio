@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -102,50 +105,37 @@
 			<th style="width: 90px;" class="textAlign-center">취소/교환/반품</th>
 		</tr>
 	</thead>
-	<tbody>
-	<%
-			//nPrice, nCount => DB Parameter 사용 예정 2018/01/03/PWY	
-			int nListCnt = 3;
-			int[] arrPrice = { 16500, 20050, 39800 };
-			int[] arrCnt = { 3, 1, 2 };
-			int nTotalPrice = 0;
-			int nFee = 0; //배송비
-			for (int nIdx = 0; nIdx < nListCnt; nIdx++) {
-				int nPrice = arrPrice[nIdx]; //제품 가격
-				int nCnt = arrCnt[nIdx]; //갯수
-				int nAllPrice = nPrice * nCnt; //제품 가격 * 갯수
-
-				nTotalPrice += nAllPrice; //주무 최종 합계
-		%>
+	<tbody>		
+		<c:forEach items = "${orderList}" var="order">
 		<tr>
 			<td>
 				<div class="cartListDiv alignCenter">
 					<div class="cartListItem">
-						<span class ="">20171231</span>
+						<span class ="">${order.order_date}</span>
 						<p>
-							<strong><span class="BasicColor">[213006]</span></strong>
+							<strong><span class="BasicColor">[${order.order_NO}]</span></strong>
 					</div>
 				</div>
 				
 			</td>
 			<td>
 				<div class="cartListDiv alignCenter">
-					<img style="width: 80px" class="fullWidth cartListItem"
-						src="resources/product/shirts/cart1.jpg">
+					<img name ='img' style="width: 80px" class="fullWidth cartListItem"
+						src='${order.IMG_path}'>
 				</div>
 			</td>
 			<td>
 				<div class="cartListDiv">
 					<div class="cartListItem">
-						<span>product name</span>
+						<span>${order.product_name}</span>
 						<p>
-							<span class="BasicColor">[옵션: 그레이]</span>
+							<span class="BasicColor">[옵션: ${order.color}]</span>
 					</div>
 				</div>
 			</td>
 			<td>
 				<div class="cartListDiv alignCenter">
-					<span name="objPrice" class="cartListItem alignCenter"><%=nPrice%>원</span>
+					<span name="objPrice" class="cartListItem alignCenter">${order.product_price}원</span>
 				</div>
 			</td>
 			<td>
@@ -153,13 +143,13 @@
 					<div class="cartListItem">
 						<input name="itemCount" class="form-control cartListItem alignCenter"
 							style="width: 55px; height: 27px;" type="text" min="1" max="20"
-							value="<%=nCnt%>" readonly="readonly"/>
+							value="${order.order_quantity }" readonly="readonly"/>
 					</div>
 				</div>
 			</td>
 			<td>
 				<div class="cartListDiv alignCenter">
-					<span name="objAllPrice" class="cartListItem"><%=nAllPrice%>원</span>
+					<span name="objAllPrice" class="cartListItem">${order.orderPrice}원</span>
 				</div>
 			</td>
 			<td>
@@ -182,9 +172,7 @@
 				</div>
 			</td>
 		</tr>
-		<%
-			}
-		%>
+		</c:forEach>
 		<tr>
 			<td colspan = "8">
 				<div class="cartListDiv alignCenter">

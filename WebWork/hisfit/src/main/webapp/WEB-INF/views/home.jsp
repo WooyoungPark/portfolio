@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -47,6 +48,25 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
+		<table>
+        <thead>
+            <tr>
+                <th>아이디</th>
+                <th>비밀번호</th>
+                <th>이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${memberList}" var="member">
+                <tr>
+                    <td>${member.order_NO}</td>
+                    <td>${member.order_quantity}</td>
+                    <td>${member.IMG_path}</td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+
 	</div>
 </body>
 </html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.portfolio.mapper.orderMapper">
+	
+	<select id="selectOrder" resultType="orderVO">
+			SELECT ORDER_TB.order_date, ORDER_TB.order_NO, ORDER_TB.order_quantity, PRODUCT_TB.IMG_path, 
+						PRODUCT_TB.product_name, PRODUCT_TB.color, PRODUCT_TB.size, PRODUCT_TB.product_price, 
+						ORDER_TB.order_quantity * PRODUCT_TB.product_price AS orderPrice, PRODUCT_TB.delivery_price
+	        FROM 	ORDER_TB
+	        JOIN 	PRODUCT_TB
+	        ON 		ORDER_TB.PRODUCT_ID = PRODUCT_TB.PRODUCT_ID
+	        WHERE 	ORDER_TB.member_ID = 'User1'
+	</select>
+</mapper>
