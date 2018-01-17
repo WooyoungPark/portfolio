@@ -28,7 +28,7 @@
 		<param-value>
 			<!-- /WEB-INF/spring/root-context.xml -->
 			classpath:/config/beans.xml
-			/WEB-INF/spring/security-context.xml
+			classpath:/config/security-context.xml
 		</param-value>
 	</context-param>
 	

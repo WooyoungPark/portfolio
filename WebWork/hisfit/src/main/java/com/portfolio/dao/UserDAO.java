@@ -20,7 +20,7 @@ import com.portfolio.dto.UserVO;
  * 정동희 - 2018. 1. 17. - 최초생성
  * </pre>
  */
-public interface UserDao {
+public interface UserDAO {
 	
 	/**
 	 * [ Description ]

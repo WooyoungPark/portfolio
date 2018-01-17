@@ -23,7 +23,7 @@ public class LoginService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserVO userVO;
 		try {
-			userVO = userService.selectUser(username);
+			userVO = userService.getUserByID(username);
 		} catch (Exception e) {
 			System.out.println("Error Log \n" + e);
 			throw new UsernameNotFoundException("No user found with username" + username);
@@ -31,7 +31,7 @@ public class LoginService implements UserDetailsService {
 
 		Collection<SimpleGrantedAuthority> roles = new ArrayList<SimpleGrantedAuthority>();
 		roles.add(new SimpleGrantedAuthority("ROLE_USER"));
-		UserDetails user = new User(username, userVO.getUserPWD(), roles);
+		UserDetails user = new User(username, userVO.getPwd(), roles);
 		return user;
 	}
 

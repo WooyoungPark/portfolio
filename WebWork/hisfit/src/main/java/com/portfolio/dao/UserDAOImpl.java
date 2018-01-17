@@ -25,7 +25,7 @@ import com.portfolio.dto.UserVO;
  * </pre>
  */
 @Repository("userDao")
-public class UserDaoImpl implements UserDao{
+public class UserDAOImpl implements UserDAO{
 //	private JdbcTemplate jdbcTemplate;
 	
 //	@Autowired

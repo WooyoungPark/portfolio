@@ -13,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import com.portfolio.dao.UserDao;
+
+import com.portfolio.dao.UserDAO;
 import com.portfolio.dto.UserVO;
 import com.portfolio.service.UserService;
 
@@ -67,7 +68,7 @@ public class MybatisTest {
 	@Test @Ignore
 	public void daoTest() {
 		log.debug(session);
-		UserDao dao = context.getBean("userDao",UserDao.class);
+		UserDAO dao = context.getBean("userDao",UserDAO.class);
 		UserVO user = dao.getUserByID("admin");
 		log.debug(user.getName());
 	}

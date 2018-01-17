@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.portfolio.dao.UserDao;
+import com.portfolio.dao.UserDAO;
 import com.portfolio.dto.UserVO;
 
 /**
@@ -28,7 +28,7 @@ import com.portfolio.dto.UserVO;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	UserDao userdao;
+	UserDAO userdao;
 	
 	@Override
 	public UserVO getUserByID(String id) {
