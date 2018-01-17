@@ -12,7 +12,8 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.portfolio.hisfit">
-		<level value="info" />
+		<level value="WARN" />
+		<appender-ref ref="console"/>
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -34,7 +35,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="info" />
+		<priority value="DEBUG" />
 		<appender-ref ref="console" />
 	</root>
 	

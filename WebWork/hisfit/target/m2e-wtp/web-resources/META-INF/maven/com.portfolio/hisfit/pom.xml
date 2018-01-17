@@ -22,14 +22,13 @@
 			<version>5.1.45</version>
 		</dependency>
 
-		<!-- MyBatis 3.4.1 -->
+		<!-- MyBatis 3.4.0 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.4.1</version>
+			<version>3.4.0</version>
 		</dependency>
-
 
 		<!-- MyBatis-Spring -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -39,7 +38,7 @@
 			<version>1.3.0</version>
 		</dependency>
 
-		<!-- Spring-jdbc -->
+		<!-- Spring-jdbc JdbcTemplate 사용위해-->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -54,6 +53,13 @@
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
+		<!--  getBean 할때 에러나는 부분 해결하기 위해 추가 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>${org.springframework-version}</version>        
+		</dependency>
 
 		<!-- spring security  -->
 		<dependency>
@@ -67,6 +73,15 @@
             <artifactId>spring-security-config</artifactId>
             <version>3.2.3.RELEASE</version>
         </dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<!-- 추가 End -->
+
 
 		<!-- slf4j logger -->
 		<dependency>
@@ -86,15 +101,7 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- 추가 End -->
 
-
-		<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery</artifactId>
-			<version>3.2.1</version>
-		</dependency>
 
 		<!-- Spring -->
 		<dependency>
