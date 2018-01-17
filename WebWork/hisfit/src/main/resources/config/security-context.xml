@@ -9,6 +9,7 @@
   http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
 	<http auto-config="true" use-expressions="true">
+		 <intercept-url pattern="/" access="permitAll" />
 		 <intercept-url pattern="/resources/**" access="permitAll" />
 		 <intercept-url pattern="/login*" access="permitAll" />
 		 <intercept-url pattern="/product*" access="permitAll" />
@@ -17,6 +18,7 @@
 		 <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 		 <form-login login-page="/loginPage"
 		   login-processing-url="/login"
+		   
 		   always-use-default-target="true"
 		   default-target-url="/"
 		   username-parameter="username" password-parameter="password" />
