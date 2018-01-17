@@ -38,8 +38,8 @@ import com.portfolio.service.UserService;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:config/beans.xml")
-public class MybatisTest {
-	final static Logger log = Logger.getLogger(MybatisTest.class);
+public class MyBatisTest {
+	final static Logger log = Logger.getLogger(MyBatisTest.class);
 	@Autowired
 	ApplicationContext context;
 	

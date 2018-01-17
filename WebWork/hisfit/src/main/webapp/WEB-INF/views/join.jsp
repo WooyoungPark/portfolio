@@ -15,10 +15,10 @@
 
 </head>
 <body>
-	<%-- <jsp:include page="publicDiv/menuBar.jsp"></jsp:include> --%>
+	<jsp:include page="publicDiv/menuBar.jsp"></jsp:include>
 	<div class="container">
 		<div>
-			<%-- <jsp:include page="publicDiv/subTitle.jsp"></jsp:include> --%>
+			<jsp:include page="publicDiv/subTitle.jsp"></jsp:include>
 		</div>
 		<table class = "joinForm">
 			<tr>

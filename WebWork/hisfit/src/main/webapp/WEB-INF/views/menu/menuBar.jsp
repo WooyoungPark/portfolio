@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">LOGIN <span class="sr-only">(current)</span></a></li>
-        <li><a href="join">JOIN US</a></li>
+        <li><a href="#">JOIN US</a></li>
         <li><a href="#">CART&nbsp;<span class="badge">0</span></a></li>
         <li><a href="#">ORDER</a></li>
         <li class="dropdown">

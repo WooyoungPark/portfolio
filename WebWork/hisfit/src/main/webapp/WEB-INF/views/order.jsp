@@ -31,7 +31,7 @@
 				<jsp:include page="order/orderList.jsp"></jsp:include>
 			</div>
 			<div id="cancelList" class="tab-pane fade">
-				<jsp:include page="order/orderList.jsp"></jsp:include>
+				<jsp:include page="order/cancelList.jsp"></jsp:include>
 			</div>
 		</div>
 	</div>
