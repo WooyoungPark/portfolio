@@ -16,6 +16,7 @@
 		 <intercept-url pattern="/cart*" access="permitAll" />
 		 <intercept-url pattern="/join*" access="permitAll" />
 		 <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		 <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
 		 <form-login login-page="/loginPage"
 		   login-processing-url="/login"
 		   
