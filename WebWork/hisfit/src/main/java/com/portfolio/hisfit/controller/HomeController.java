@@ -1,4 +1,4 @@
-package com.portfolio.hisfit;
+package com.portfolio.hisfit.controller;
 
 import java.util.Locale;
 

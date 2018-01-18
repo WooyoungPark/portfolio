@@ -55,4 +55,14 @@ public class UserServiceImpl implements UserService {
 		userdao.updateUser(user);
 	}
 
+	@Override
+	public String checkID(String id) {
+		try {
+			return userdao.checkID(id);
+		} catch (Exception e) {
+			System.out.println(""+e);
+			return "error";
+		}
+	}
+
 }

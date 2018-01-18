@@ -42,4 +42,5 @@ public interface UserService {
 	
 	public void updateUser(UserVO user);
 
+	public String checkID(String id);
 }

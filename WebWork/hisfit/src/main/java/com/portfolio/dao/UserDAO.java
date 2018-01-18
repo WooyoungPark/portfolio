@@ -38,5 +38,7 @@ public interface UserDAO {
 	public void updateUser(UserVO user);
 	
 	public void deleteUser(String id);
+	
+	public String checkID(String id) throws Exception;
 
 }

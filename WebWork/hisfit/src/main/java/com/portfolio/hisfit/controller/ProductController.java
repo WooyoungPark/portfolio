@@ -1,4 +1,4 @@
-package com.portfolio.hisfit.product;
+package com.portfolio.hisfit.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

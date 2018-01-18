@@ -1,4 +1,4 @@
-package com.portfolio.hisfit.userservice;
+package com.portfolio.hisfit.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,11 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MyPageController {
-	@RequestMapping("/mypage")
-	public String myPage(Model model, HttpServletRequest request) {
-		String strTitle = "MY PAGE";
+public class CartController {
+	@RequestMapping("/cart")
+	public String cart(Model model, HttpServletRequest request) {
+		String strTitle = "MY CART";
 		model.addAttribute("title", strTitle);
-		return "mypage";
+		return "cart";
 	}
 }

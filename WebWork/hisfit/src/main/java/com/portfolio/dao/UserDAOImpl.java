@@ -2,6 +2,9 @@ package com.portfolio.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -85,6 +88,15 @@ public class UserDAOImpl implements UserDAO{
 	public void deleteUser(String id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Inject
+	private SqlSession sqlSession;
+	private static final String Namespace = "com.portfolio.mapper.userMapper";
+
+	@Override
+	public String checkID(String id) throws Exception {
+		return sqlSession.selectOne(Namespace+ ".checkID", id);
 	}
 
 

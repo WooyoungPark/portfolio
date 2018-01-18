@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,110 +23,86 @@
 		<div>
 			<jsp:include page="publicDiv/subTitle.jsp"></jsp:include>
 		</div>
-		<table class = "joinForm">
+		<table class="joinForm">
 			<tr>
-				<td class = "sub">
-					<span>회원구분</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="radio" name = "memberType" value="개인" checked="checked"><span>&nbsp;개인회원</span>&nbsp;&nbsp;
-					<input type="radio" name = "memberType" value="사업자"><span>&nbsp;사업자회원</span>&nbsp;&nbsp;
-					<input type="radio" name = "memberType" value="외국인"><span>&nbsp;외국인회원(foreigner)</span>
+				<td class="sub"><span>회원구분</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="radio" name="memberType"
+					value="개인" checked="checked"><span>&nbsp;개인회원</span>&nbsp;&nbsp;
+					<input type="radio" name="memberType" value="사업자"><span>&nbsp;사업자회원</span>&nbsp;&nbsp;
+					<input type="radio" name="memberType" value="외국인"><span>&nbsp;외국인회원(foreigner)</span>
 				</td>
 			</tr>
 		</table>
-		
-		<table class = "joinForm">
-			<caption><strong>기본정보</strong></caption>
+
+		<table class="joinForm">
+			<caption>
+				<strong>기본정보</strong>
+			</caption>
 			<tr>
-				<td class = "sub">
-					<span>아이디</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="text" id = "objID" value = "">	 <span>(영문소문자/숫자, 4~16자)</span>
+				<td class="sub"><span>아이디</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="text" id="objID" value="">
+					<span>(영문소문자/숫자, 4~16자)</span> <span id='overlap'></span></td>
+			</tr>
+			<tr>
+				<td class="sub"><span>비밀번호</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="password" id="objPWD" value="">
+					<span>(영문&nbsp;대소문자/숫자/특수문자 중 2가지 이상 조합,&nbsp;10자~16자)</span></td>
+			</tr>
+			<tr>
+				<td class="sub"><span>비밀번호 확인</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="password" id="objPWD_OK" value="">
 				</td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>비밀번호</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="password" id = "objPWD" value = ""> <span>(영문&nbsp;대소문자/숫자/특수문자 중 2가지 이상 조합,&nbsp;10자~16자)</span>	
+				<td class="sub"><span>비밀번호 확인 질문</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body" id="objPDW_qes"><select style="height: 25px;">
+						<option value="0">기억에 남는 추억의 장소는?</option>
+						<option value="1">자신의 인생 좌우명은?</option>
+						<option value="2">자신의 보물 제1호는?</option>
+						<option value="3">가장 기억에 남는 선생님 성함은?</option>
+						<option value="4">타인이 모르는 자신만의 신체비밀이 있다면?</option>
+						<option value="5">추억하고 싶은 날짜가 있다면?</option>
+						<option value="6">받았던 선물 중 기억에 남는 독특한 선물은?</option>
+						<option value="7">유년시절 가장 생각나는 친구 이름은?</option>
+						<option value="8">인상 깊게 읽은 책 이름은?</option>
+						<option value="9">읽은 책 중에서 좋아하는 구절이 있다면?</option>
+						<option value="10">자신이 두번째로 존경하는 인물은?</option>
+						<option value="11">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
+						<option value="12">초등학교 때 기억에 남는 짝꿍의 이름은?</option>
+						<option value="13">다시 태어나면 되고 싶은 것은?</option>
+						<option value="14">내가 좋아하는 캐릭터는?</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="sub"><span>비밀번호 확인 답변</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="text" id="objPWD_answer" value=""
+					style="width: 500px;"></td>
+			</tr>
+			<tr>
+				<td class="sub"><span>이름</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="text" id="objName" value="">
 				</td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>비밀번호 확인</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="password" id = "objPWD_OK" value = ""> 	
-				</td>
-			</tr>
-			<tr>
-				<td class = "sub">
-					<span>비밀번호 확인 질문</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body" id = "objPDW_qes">
-					<select style="height:25px;">
-						<option value = "0">기억에 남는 추억의 장소는?</option>
-						<option value = "1">자신의 인생 좌우명은?</option>
-						<option value = "2">자신의 보물 제1호는?</option>
-						<option value = "3">가장 기억에 남는 선생님 성함은?</option>
-						<option value = "4">타인이 모르는 자신만의 신체비밀이 있다면?</option>
-						<option value = "5">추억하고 싶은 날짜가 있다면?</option>
-						<option value = "6">받았던 선물 중 기억에 남는 독특한 선물은?</option>
-						<option value = "7">유년시절 가장 생각나는 친구 이름은?</option>
-						<option value = "8">인상 깊게 읽은 책 이름은?</option>
-						<option value = "9">읽은 책 중에서 좋아하는 구절이 있다면?</option>
-						<option value = "10">자신이 두번째로 존경하는 인물은?</option>
-						<option value = "11">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
-						<option value = "12">초등학교 때 기억에 남는 짝꿍의 이름은?</option>
-						<option value = "13">다시 태어나면 되고 싶은 것은?</option>
-						<option value = "14">내가 좋아하는 캐릭터는?</option>
-					</select>
+				<td class="sub"><span>주소</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="text" id="objPOST" value=""><br>
+					<input type="text" id="objAdress" value=""> <span>기본&nbsp;주소</span><br>
+					<input type="text" id="objAdress_detail" value=""> <span>나머지&nbsp;주소</span>
+
 				</td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>비밀번호 확인 답변</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="text" id = "objPWD_answer" value = "" style=" width:500px;"> 	
-				</td>
-			</tr>
-			<tr>
-				<td class = "sub">
-					<span>이름</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="text" id = "objName" value = ""> 	
-				</td>
-			</tr>
-			<tr>
-				<td class = "sub">
-					<span>주소</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-						<input type="text" id = "objPOST" value = ""><br>
-						<input type="text" id = "objAdress" value = ""> <span>기본&nbsp;주소</span><br> 	
-						<input type="text" id = "objAdress_detail" value = ""> <span>나머지&nbsp;주소</span>
-					
-				</td>
-			</tr>
-			<tr>
-				<td class = "sub">
-					<span>일반전화</span>
-				</td>
-				<td class="body">
-					<select id = "objTell_region" style="height:25px;">
+				<td class="sub"><span>일반전화</span></td>
+				<td class="body"><select id="objTell_region"
+					style="height: 25px;">
 						<option value="02">02</option>
 						<option value="031">031</option>
 						<option value="032">032</option>
@@ -154,43 +133,32 @@
 						<option value="017">017</option>
 						<option value="018">018</option>
 						<option value="019">019</option>
-					</select>
-					<span>-</span>
-					<input type="text" id = "objTell_mid" value = "" size="4" maxlength="4"> 	
-					<span>-</span>
-					<input type="text" id = "objTell_div" value = "" size="4" maxlength="4"> 	
-				</td>
+				</select> <span>-</span> <input type="text" id="objTell_mid" value=""
+					size="4" maxlength="4"> <span>-</span> <input type="text"
+					id="objTell_div" value="" size="4" maxlength="4"></td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>휴대전화</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<select id = "objCell_region" style="height:25px;">
+				<td class="sub"><span>휴대전화</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><select id="objCell_region"
+					style="height: 25px;">
 						<option value="010">010&nbsp;&nbsp;</option>
 						<option value="011">011</option>
 						<option value="016">016</option>
 						<option value="017">017</option>
 						<option value="018">018</option>
 						<option value="019">019</option>
-					</select>
-					<span>-</span>
-					<input type="text" id = "objCell_mid" value = "" size="4" maxlength="4"> 	
-					<span>-</span>
-					<input type="text" id = "objCell_div" value = "" size="4" maxlength="4"> 	
-				</td>
+				</select> <span>-</span> <input type="text" id="objCell_mid" value=""
+					size="4" maxlength="4"> <span>-</span> <input type="text"
+					id="objCell_div" value="" size="4" maxlength="4"></td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>이메일</span>
-					<img src="resources/user/ico_required.png">
-				</td>
-				<td class="body">
-					<input type="text" id = "objEmail_ID" value = ""> 	
-					<span>@</span>
-					<input type="text" id = "objEmail_domain" value = "" readonly="readonly"> 	
-					<select id = "objDomain_List" style="height:25px;" onchange="setDomain(this)">
+				<td class="sub"><span>이메일</span> <img
+					src="resources/user/ico_required.png"></td>
+				<td class="body"><input type="text" id="objEmail_ID" value="">
+					<span>@</span> <input type="text" id="objEmail_domain" value=""
+					readonly="readonly"> <select id="objDomain_List"
+					style="height: 25px;" onchange="setDomain(this)">
 						<option value="null">-이메일&nbsp;선택-</option>
 						<option value="naver.com">naver.com</option>
 						<option value="daum.net">daum.net</option>
@@ -201,32 +169,29 @@
 						<option value="korea.com">korea.com</option>
 						<option value="gmail.com">gmail.com</option>
 						<option value="none">직접입력</option>
-					</select>
-				</td>
+				</select></td>
 			</tr>
 		</table>
-		<table class = "joinForm">
-			<caption><strong>추가정보</strong></caption>
+		<table class="joinForm">
+			<caption>
+				<strong>추가정보</strong>
+			</caption>
 			<tr>
-				<td class = "sub">
-					<span>생년월일</span>
-				</td>
-				<td class="body">
-				
-					<input type="text" id = "objBirth_year" value = "" size="4" maxlength="4"><span>년&nbsp;</span>
-					<input type="text" id = "objBirth_month" value = "" size="2" maxlength="2"><span>월&nbsp;</span>
-					<input type="text" id = "objBirth_date" value = "" size="2" maxlength="2"><span>일&nbsp;</span>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="radio" name = "objBirth_Type" value="0" checked="checked"><span>양력</span>&nbsp;&nbsp;
-					<input type="radio" name = "objBirth_Type" value="1"><span>음력</span>&nbsp;&nbsp;
+				<td class="sub"><span>생년월일</span></td>
+				<td class="body"><input type="text" id="objBirth_year" value=""
+					size="4" maxlength="4"><span>년&nbsp;</span> <input
+					type="text" id="objBirth_month" value="" size="2" maxlength="2"><span>월&nbsp;</span>
+					<input type="text" id="objBirth_date" value="" size="2"
+					maxlength="2"><span>일&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="objBirth_Type" value="0"
+					checked="checked"><span>양력</span>&nbsp;&nbsp; <input
+					type="radio" name="objBirth_Type" value="1"><span>음력</span>&nbsp;&nbsp;
 				</td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>지역</span>
-				</td>
-				<td class="body">
-					<select id = "objRegion" style="height:25px; width:300px;">
+				<td class="sub"><span>지역</span></td>
+				<td class="body"><select id="objRegion"
+					style="height: 25px; width: 300px;">
 						<option value="0">선택</option>
 						<option value="경기">경기</option>
 						<option value="서울">서울</option>
@@ -245,42 +210,36 @@
 						<option value="광주">광주</option>
 						<option value="제주">제주</option>
 						<option value="해외">해외</option>
-					</select>
-				</td>
+				</select></td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>히즈핏을&nbsp;알게된&nbsp;경로&nbsp;:)</span>
-				</td>
-				<td class="body">
-					<input type="text" id = "objLearned_Path" value = "" style="width:500px;">
-				</td>
+				<td class="sub"><span>히즈핏을&nbsp;알게된&nbsp;경로&nbsp;:)</span></td>
+				<td class="body"><input type="text" id="objLearned_Path"
+					value="" style="width: 500px;"></td>
 			</tr>
 			<tr>
-				<td class = "sub">
-					<span>추천인&nbsp;아이디</span>
-				</td>
-				<td class="body">
-					<input type="text" id = "objLearned_ID" value = "">
+				<td class="sub"><span>추천인&nbsp;아이디</span></td>
+				<td class="body"><input type="text" id="objLearned_ID" value="">
 				</td>
 			</tr>
 		</table>
-				<table class = "joinForm">
-			<caption><strong>전체동의</strong></caption>
+		<table class="joinForm">
+			<caption>
+				<strong>전체동의</strong>
+			</caption>
 			<tr>
-				<td colspan="2" class="sub">
-					<input type="checkbox" onchange="allAgree(this)">
-					<span><strong>이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</strong></span>
-				</td>
+				<td colspan="2" class="sub"><input type="checkbox"
+					onchange="allAgree(this)"> <span><strong>이용약관
+							및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</strong></span></td>
 
 			</tr>
 			<tr>
-				<td colspan="2" class = "sub body">
-					<table style="width:100%">
+				<td colspan="2" class="sub body">
+					<table style="width: 100%">
 						<tr>
-							<td style="width:50%; padding:10px;">
-								<span><strong>[필수] 이용약관 동의</strong></span><br><br>
-								<textarea rows="7" readonly="readonly">
+							<td style="width: 50%; padding: 10px;"><span><strong>[필수]
+										이용약관 동의</strong></span><br> <br> <textarea rows="7"
+									readonly="readonly">
 
 제1조(목적)
 
@@ -518,15 +477,13 @@
 
 부 칙(시행일) 이 약관은 2016년 1월 1일부터 시행합니다.
 								
-								</textarea>
-								<br>
-								<span>이용약관에 동의하십니까?&nbsp;&nbsp;</span>
-								<input type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
+								</textarea> <br> <span>이용약관에 동의하십니까?&nbsp;&nbsp;</span> <input
+								type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
 							</td>
-							
-							<td style="width:50%; padding:10px;">
-								<span><strong>[필수] 개인정보 수집 및 이용 동의</strong></span><br><br>
-								<textarea rows="7" readonly="readonly">
+
+							<td style="width: 50%; padding: 10px;"><span><strong>[필수]
+										개인정보 수집 및 이용 동의</strong></span><br> <br> <textarea rows="7"
+									readonly="readonly">
 								
 ■ 수집하는 개인정보 항목
 
@@ -546,19 +503,16 @@
 ■ 개인정보의 보유 및 이용기간
 
 회사는 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다.
-								</textarea>
-								<br>
-								<span>개인정보 수집 및 이용에 동의하십니까?&nbsp;&nbsp;</span>
-								<input type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
+								</textarea> <br> <span>개인정보 수집 및 이용에 동의하십니까?&nbsp;&nbsp;</span> <input
+								type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
 							</td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" class = "sub body" style="padding:25px;">
-					<span><strong>[필수] 이용약관 동의</strong></span><br><br>
-					<textarea rows="7" readonly="readonly">
+				<td colspan="2" class="sub body" style="padding: 25px;"><span><strong>[필수]
+							이용약관 동의</strong></span><br> <br> <textarea rows="7" readonly="readonly">
 
 할인쿠폰 및 혜택, 이벤트, 신상품 소식 등 쇼핑몰에서 제공하는 유익한 쇼핑정보를 SMS와 이메일로 받아보실 수 있습니다.
 
@@ -566,17 +520,15 @@
 
 선택 약관에 동의하지 않으셔도 회원가입은 가능하며, 회원가입 후 회원정보수정 페이지에서 언제든지 수신여부를 변경하실 수 있습니다.
 
-					</textarea>
-					<br>
-					<span>이메일 수신을 동의하십니까?&nbsp;&nbsp;</span>
-					<input type="checkbox" name = "chkAgree"><span><strong>동의함</strong></span>
+					</textarea> <br> <span>이메일 수신을 동의하십니까?&nbsp;&nbsp;</span> <input
+					type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
 				</td>
 			</tr>
 			<tr>
-				<td colspan = "2">
+				<td colspan="2">
 					<div>
 						<button class="okBtn" id="btnOK">회원가입</button>
-						<button class = "cancelBtn" id="btnCancel">취소</button>
+						<button class="cancelBtn" id="btnCancel">취소</button>
 					</div>
 				</td>
 			</tr>
@@ -585,6 +537,22 @@
 </body>
 <jsp:include page="publicDiv/footer.jsp"></jsp:include>
 <script type="text/javascript">
-	
+$('#objID').focusout(function() {
+	var id =  {"userID":$("#objID").val()};
+
+	$.ajax({
+		url:'ajax.overlap',
+		type:'GET',
+		data: id,
+		success:function(data){
+			var strGetData = data.userID;
+			$('#overlap').text(strGetData);
+		},
+		error:function(jqXHR, textStatus, errorThrown){
+			alert("error\n"+textStatus+':' + errorThrown);
+		}
+	});
+
+});
 </script>
 </html>
