@@ -1,4 +1,4 @@
-package com.portfolio.dao;
+package com.Mappers;
 
 import com.portfolio.dto.UserVO;
 
@@ -22,5 +22,4 @@ import com.portfolio.dto.UserVO;
 public interface UserMapper {
 	public UserVO getUserByID(String id);
 	public String checkID(String id);
-
 }

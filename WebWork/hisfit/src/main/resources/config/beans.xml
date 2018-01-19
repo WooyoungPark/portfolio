@@ -39,8 +39,8 @@
 			매퍼 interface인것을 구분을 위해 Marker인터페이스와 Marker(MyMapper로 지정.) 어노테이션 설정하여 매퍼 구분 
 	 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.portfolio" />	<!-- Mapper를 찾는 베이스 패키지 -->	
-		<property name="annotationClass" value="com.portfolio.dao.MyMapper" />	<!-- Mapper를 지정하는 어노테이션 클래스 -->
+		<property name="basePackage" value="com.Mappers" />	<!-- Mapper를 찾는 베이스 패키지 -->	
+		<property name="annotationClass" value="com.Mappers.MyMapper" />	<!-- Mapper를 지정하는 어노테이션 클래스 -->
 	</bean>
 	
 	<!-- Mapper 설정 -->
