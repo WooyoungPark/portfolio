@@ -24,7 +24,6 @@
 		<property name="configLocation"   value="classpath:/config/SqlMapConfig.xml" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:/mappers/userinfo.xml</value>
 				<value>classpath:/mappers/*Mapper.xml</value>
 			</list>
 		</property>

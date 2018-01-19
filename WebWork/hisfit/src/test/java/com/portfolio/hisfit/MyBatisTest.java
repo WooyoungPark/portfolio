@@ -19,8 +19,6 @@ import com.portfolio.dto.UserVO;
 import com.portfolio.service.UserService;
 
 
-
-
 /**
  * <pre> 
  * com.portfolio.hisfit
@@ -55,13 +53,20 @@ public class MyBatisTest {
 	public void mapperTest() {
 //		UserDao dao = context.getBean("userDao",UserDao.class);
 //		UserVO user = dao.findUser("admin");
-		UserVO user =  service.getUserByID("admin");
-//		log.debug(user.getName());
-//		log.info(user.getName());
+		UserVO user =  service.getUserByID("user1");
+
 		if(user == null) {
 			System.out.println("음슴");
 		}else {
 			System.out.println(user.getName());
+		}
+		
+		String result = service.checkID("admin");
+		
+		if(result ==null) {
+			System.out.println("음슴2");
+		}else {
+			System.out.println(result);
 		}
 	}
 	

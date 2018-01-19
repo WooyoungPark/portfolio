@@ -2,10 +2,9 @@ package com.portfolio.hisfit.controller;
 
 import java.util.HashMap;
 
-import javax.inject.Inject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,7 +32,7 @@ import com.portfolio.service.UserService;
 @Controller
 public class UserController {
 
-	@Inject
+	@Autowired
 	private UserService service;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -43,13 +42,14 @@ public class UserController {
 	public HashMap<String, Object> checkId(@RequestParam(value="userID") String userID) {
 		
 		String strResult = service.checkID(userID);
+		
+		Boolean blnIsExist = true;
+		
 		if(strResult==null||strResult.equals("")) {
-			strResult = "사용가능한 ID입니다.";
-		}else {
-			strResult = "사용중인 ID입니다.";
+			blnIsExist = !blnIsExist;
 		}
 	    HashMap<String, Object> hashmap = new HashMap<String, Object>();
-	    hashmap.put("userID", strResult);
+	    hashmap.put("result", blnIsExist);
 	     
 	    return hashmap;
 	}

@@ -47,6 +47,11 @@ public class UserDAOImpl implements UserDAO{
 		
 	}
 	
+	@Override
+	public String checkID(String id) throws Exception {
+		return userMapper.checkID(id);
+	}
+	
 	
 	
 /*	class UserMapper implements RowMapper<UserVO>{
@@ -89,15 +94,5 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Inject
-	private SqlSession sqlSession;
-	private static final String Namespace = "com.portfolio.mapper.userMapper";
-
-	@Override
-	public String checkID(String id) throws Exception {
-		return sqlSession.selectOne(Namespace+ ".checkID", id);
-	}
-
 
 }

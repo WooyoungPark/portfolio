@@ -8,7 +8,7 @@ import com.portfolio.dto.UserVO;
  * UserMapper.java
  * [ Description ]
  * 사용자관련 테이블(userinfo)에서의 CRUD작업을 위한 Mapper Interface
- * 매핑되어있는 매퍼 XML : userinfo.xml src/main/resources/mappers/userinfo.xml 
+ * 매핑되어있는 매퍼 XML : userMapper.xml src/main/resources/mappers/userMapper.xml 
  * </pre>
  * [ History ]
  * @author	 정동희
@@ -21,5 +21,6 @@ import com.portfolio.dto.UserVO;
 @MyMapper
 public interface UserMapper {
 	public UserVO getUserByID(String id);
+	public String checkID(String id);
 
 }

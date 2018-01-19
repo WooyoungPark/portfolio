@@ -42,19 +42,19 @@
 			<tr>
 				<td class="sub"><span>아이디</span> <img
 					src="resources/user/ico_required.png"></td>
-				<td class="body"><input type="text" id="objID" value="">
+				<td class="body"><input type="text" id="objID" value="" maxlength="16">
 					<span>(영문소문자/숫자, 4~16자)</span> <span id='overlap'></span></td>
 			</tr>
 			<tr>
 				<td class="sub"><span>비밀번호</span> <img
 					src="resources/user/ico_required.png"></td>
-				<td class="body"><input type="password" id="objPWD" value="">
+				<td class="body"><input type="password" id="objPWD" value="" maxlength="16">
 					<span>(영문&nbsp;대소문자/숫자/특수문자 중 2가지 이상 조합,&nbsp;10자~16자)</span></td>
 			</tr>
 			<tr>
 				<td class="sub"><span>비밀번호 확인</span> <img
 					src="resources/user/ico_required.png"></td>
-				<td class="body"><input type="password" id="objPWD_OK" value="">
+				<td class="body"><input type="password" id="objPWD_OK" value="" maxlength="16">
 				</td>
 			</tr>
 			<tr>
@@ -537,22 +537,120 @@
 </body>
 <jsp:include page="publicDiv/footer.jsp"></jsp:include>
 <script type="text/javascript">
-$('#objID').focusout(function() {
-	var id =  {"userID":$("#objID").val()};
 
-	$.ajax({
-		url:'ajax.overlap',
-		type:'GET',
-		data: id,
-		success:function(data){
-			var strGetData = data.userID;
-			$('#overlap').text(strGetData);
-		},
-		error:function(jqXHR, textStatus, errorThrown){
-			alert("error\n"+textStatus+':' + errorThrown);
-		}
-	});
+var blnIdOverlapPass = false;
 
+/* ID 영문 및 숫자 입력  */
+$('#objID').keyup(function(event){
+	if(!(event.keyCode >=37 && event.keyCode <=40)){
+		var inputVal = $(this).val();
+		$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+		$(this).val($(this).val().toLowerCase());
+	}
 });
+
+//ID 유효성 검사 
+$('#objID').focusout(function() {
+	var id = $("#objID").val();
+	
+	if( $("#objID").val().length < 5 ){
+		changeOverlapText(1);
+			
+	}else if (id != ""){
+		
+		var jsonID =  {"userID":id};
+		
+		$.ajax({
+			url:'ajax.overlap',
+			type:'GET',
+			data: jsonID,
+			success:function(data){
+				var isExist = data.result;
+				if (isExist){
+					changeOverlapText(4);
+				}else{
+					changeOverlapText(3);
+				}
+			},
+			error:function(jqXHR, textStatus, errorThrown){
+				alert("error\n"+textStatus+':' + errorThrown);
+			}
+		});
+	}else{
+		//공백일 경우
+		changeOverlapText(null);
+	}
+	
+});
+
+//ID 유효성체크 후 표시
+function changeOverlapText(code){
+	
+	switch (code){
+		case 1	:	//4자리 이하 일때
+			$('#overlap').text("");
+			blnIdOverlapPass = false;
+			break;
+		case 2	:	//공백
+			$('#overlap').text("");
+			blnIdOverlapPass = false;
+			break;
+		case 3	:	//사용 가능
+			$('#overlap').text("사용 가능한 ID입니다");
+			$('#overlap').css("color","green");
+			blnIdOverlapPass = true;
+			break;
+		case 4	:	//이미 존재하는 ID
+			$('#overlap').text("이미 존재하는 ID입니다");
+			$('#overlap').css("color","red");
+			blnIdOverlapPass = false;
+			break;
+		default	:
+			break;
+	}
+}
+
+$('#objPWD').focusout(function(){
+	chkPwd($('#objPWD').val());
+	
+});
+
+function chkPwd(str){
+
+	 var pw = str;
+
+	 var num = pw.search(/[0-9]/g);
+
+	 var eng = pw.search(/[a-z]/ig);
+
+	 /* var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩';:₩/?]/gi); */
+	 var spe = pw.search(/[!,@,#,$,%,^,&,*,?,_,~]/gi);
+	 
+	/* alert(num + "/" + eng + "/" + spe + ":" +  pw ); */
+	
+	 if(pw.length < 10 || pw.length > 17){
+
+		  alert("10자리 ~ 16자리 이내로 입력해주세요.");
+	
+		  return false;
+	
+	 }
+
+	 if(pw.search(/₩s/) != -1){
+
+			alert("비밀번호는 공백업이 입력해주세요.");
+			
+			return false;
+	 	}
+
+	 if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+
+			 alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+			
+			 return false;
+	 	}
+	 true
+}
+
 </script>
 </html>
