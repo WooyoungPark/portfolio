@@ -61,7 +61,7 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value="/ajax.join", method=RequestMethod.POST)
 	public Map<String , String> joinOK(@RequestParam HashMap<String, Object> params) {
-		System.out.println(params);
+//		System.out.println(params);
 		UserVO user = new UserVO();
 		user.setId(params.get("id").toString());
 		user.setPwd(params.get("pwd").toString());

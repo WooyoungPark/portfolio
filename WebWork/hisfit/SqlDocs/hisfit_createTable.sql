@@ -29,7 +29,7 @@ ADD PRIMARY KEY (`ID`),
 DROP INDEX `index_UNIQUE` ;
 
 ALTER TABLE `shoppingmall`.`userinfo` 
-ADD COLUMN `type` INT(1) NOT NULL AFTER `authority`;userinfo
+ADD COLUMN `type` INT(1) NOT NULL AFTER `authority`;
 
 
 CREATE TABLE PRODUCT_CATEGORY_TB(

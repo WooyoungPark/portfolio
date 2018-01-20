@@ -52,7 +52,6 @@ public class UserDAOImpl implements UserDAO{
 	
 	@Override
 	public void insertUser(UserVO user) {
-		System.out.println("DAO");
 		userMapper.insertUser(user);
 	}
 
