@@ -85,4 +85,64 @@ public class ProductController {
 		model.addAttribute("BestDIV", bBestDIV);
 		return "productList";
 	}
+	
+	@RequestMapping("/productDetail")
+	public String productDetail(Model model, HttpServletRequest request) {
+		int nCategory;
+		try {
+			nCategory = Integer.parseInt(request.getParameter("nCategory")); // Get Menuflag
+		} catch (NullPointerException ne) {
+			System.out.println("NullPointerException : "+ne);
+			nCategory = -1;	//default 처리
+		} catch (NumberFormatException fe) {
+			System.out.println("NuberFormatException : "+fe);
+			nCategory = -1;
+		}
+		String strTitle;
+
+		switch (nCategory) {
+		case 0:
+			strTitle = "BEST 50";
+			break;
+		case 1:
+			strTitle = "NEW Discount";
+			break;
+		case 2:
+			strTitle = "OUTWEAR";
+			break;
+		case 3:
+			strTitle = "TOP";
+			break;
+		case 4:
+			strTitle = "SHIRTS";
+			break;
+		case 5:
+			strTitle = "PANTS";
+			break;
+		case 6:
+			strTitle = "SHOES";
+			break;
+		case 7:
+			strTitle = "BAG";
+			break;
+		case 8:
+			strTitle = "ACC";
+			break;
+		case 9:
+			strTitle = "SALE";
+			break;
+		case 10:
+			strTitle = "ONLY ONE";
+			break;
+		case 11:
+			strTitle = "COUPLE";
+			break;
+		default:
+			strTitle = "";
+		}
+		
+		model.addAttribute("title", strTitle);
+		
+		return "productDetail";
+	}
 }

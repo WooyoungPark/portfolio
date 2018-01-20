@@ -12,4 +12,5 @@
     <fullyQualifiedTypeName name="com.portfolio.service.ProductService"/>
     <fullyQualifiedTypeName name="com.portfolio.dto.productListVO"/>
     <fullyQualifiedTypeName name="com.portfolio.dto.ProductListVO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
