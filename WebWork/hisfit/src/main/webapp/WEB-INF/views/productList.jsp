@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -49,20 +50,22 @@
 
 			<hr class="margin0">
 			<div class="row">
-				<div class="col-xs-4">
-					<div>
-						<img style="width: 100%" class="fullWidth"
-							src="resources/product/shirts/best1.jpg">
+				<c:forEach items = "${productList}" var="product">
+					<div class="col-xs-4">
+						<div>
+							<img style="width: 100%" class="fullWidth"
+								src='${product.img_path}'>
+						</div>
+						<div class="topMargin">Product name</div>
+						<div class="fullWidth topBorder colorGray"
+							style="margin-top: 5px; padding-top: 5px;">
+							<span style="font-size: 12px; color: #009ADB">${product.product_price}원</span><br>
+							<span style="font-size: 12px;">${product.color} Color / ${product.size} Size</span><br>
+							<span style="font-size: 12px;">${product.product_subTitle}</span>
+						</div>
 					</div>
-					<div class="topMargin">Product name</div>
-					<div class="fullWidth topBorder colorGray"
-						style="margin-top: 5px; padding-top: 5px;">
-						<span style="font-size: 12px; color: #009ADB">39800원</span><br>
-						<span style="font-size: 12px;">2&nbsp;Color&nbsp;/&nbsp;1&nbsp;Size</span><br>
-						<span style="font-size: 12px;">두마리 토끼. 패딩과 코트의 하모니!!!</span>
-					</div>
-				</div>
-
+				</c:forEach>
+<!-- 
 				<div class="col-xs-4">
 					<div>
 						<img style="width: 100%" class="fullWidth"
@@ -141,7 +144,7 @@
 						<span style="font-size: 12px;">2&nbsp;Color&nbsp;/&nbsp;1&nbsp;Size</span><br>
 						<span style="font-size: 12px;">두마리 토끼. 패딩과 코트의 하모니!!!</span>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

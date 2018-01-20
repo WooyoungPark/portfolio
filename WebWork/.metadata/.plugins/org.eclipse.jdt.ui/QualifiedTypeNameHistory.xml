@@ -6,4 +6,10 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="com.portfolio.service.UserService"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="com.portfolio.dao.productDAO"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.portfolio.service.ProductService"/>
+    <fullyQualifiedTypeName name="com.portfolio.dto.productListVO"/>
+    <fullyQualifiedTypeName name="com.portfolio.dto.ProductListVO"/>
 </qualifiedTypeNameHistroy>

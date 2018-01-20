@@ -1,4 +1,4 @@
-package com.portfolio.dao;
+package com.Mappers;
 
 /* Mapper interface와 일반 interface의 구분을 위해 Mapper interface에는 @MyMapper 애노테이션을 넣어준다
  * 
