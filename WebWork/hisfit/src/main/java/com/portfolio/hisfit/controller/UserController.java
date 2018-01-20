@@ -54,4 +54,12 @@ public class UserController {
 	    return hashmap;
 	}
 	
+	@RequestMapping("join.do")
+    public String join(@RequestParam HashMap<String, Object> params)
+    {
+        System.out.println(params);
+//        service.joinMember(params);
+        return "join"; 
+    }
+	
 }

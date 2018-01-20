@@ -18,6 +18,20 @@ CREATE TABLE `userinfo` (
 
 ALTER TABLE userinfo add authority varchar(10) not null;
 
+ALTER TABLE `shoppingmall`.`userinfo` 
+CHANGE COLUMN `TEL` `TEL` CHAR(12) NULL DEFAULT NULL ,
+CHANGE COLUMN `PHONE` `PHONE` CHAR(11) NOT NULL ;
+
+ALTER TABLE `shoppingmall`.`userinfo` 
+DROP COLUMN `index`,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`ID`),
+DROP INDEX `index_UNIQUE` ;
+
+ALTER TABLE `shoppingmall`.`userinfo` 
+ADD COLUMN `type` INT(1) NOT NULL AFTER `authority`;
+
+
 CREATE TABLE PRODUCT_CATEGORY_TB(
 	category_NO INT PRIMARY KEY,
     category_name VARCHAR(10) NOT NULL
