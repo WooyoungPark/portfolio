@@ -7,14 +7,16 @@
 	<select id="getUserByID" parameterType="string"  resultType="userVO">
 	 	select * from userinfo where ID=#{id}
 	</select>
-	
-	<insert id="insertUser" parameterType="userVO">
-		insert into userinfo values(#{userId},#{name},#{gender},#{city} )
-	</insert>
-	
+
 	<select id="checkID" parameterType="String" resultType="String">
 			SELECT id FROM userinfo WHERE id = #{id}
 	</select>
+	
+	<insert id="insertUser" parameterType="userVO">
+		insert into userinfo values(#{id},#{pwd},#{pwdQ},#{pwdA},#{name},#{zip},#{add1},#{add2},
+		#{tel},#{phone},#{email},#{authority},#{type})
+	</insert>
+	
 	
 <!-- 	<select id="selectUserList" resultType="User">
 		select * from userinfo order by userid

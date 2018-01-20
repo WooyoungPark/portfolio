@@ -16,10 +16,12 @@ import com.portfolio.dto.UserVO;
  * <pre>
  * ---- 수정이력[Name - Date - Description] ----
  * 정동희 - 2018. 1. 17. - 최초생성
+ * 정동희 - 2018. 1. 20. - insertUser추가
  * </pre>
  */
 @MyMapper
 public interface UserMapper {
 	public UserVO getUserByID(String id);
 	public String checkID(String id);
+	public void insertUser(UserVO user);
 }

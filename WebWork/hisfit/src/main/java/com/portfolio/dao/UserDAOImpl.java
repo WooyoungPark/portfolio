@@ -50,20 +50,10 @@ public class UserDAOImpl implements UserDAO{
 		return userMapper.checkID(id);
 	}
 	
-	
-	
-/*	class UserMapper implements RowMapper<UserVO>{
-		public UserVO mapRow(ResultSet rs, int rowNum) throws SQLException{
-			UserVO user = new UserVO("admin", "4444","1","pwda","JDH","405734","incheon","lotte","0322460389","01075016411","ddd@naver.com");
-			return user;
-		}
-		
-	}*/
-
 	@Override
 	public void insertUser(UserVO user) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("DAO");
+		userMapper.insertUser(user);
 	}
 
 	@Override

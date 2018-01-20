@@ -2,7 +2,6 @@ package com.portfolio.dto;
 
 public class UserVO {
 	
-	private int index;
 	private String id;
 	private String pwd;
 	private int pwdQ;
@@ -11,11 +10,13 @@ public class UserVO {
 	private String zip;
 	private String add1;
 	private String add2;
-	private int tel;
-	private int phone;
+	private String tel;
+	private String phone;
     private String email;
+    private String authority;
+	private int type;
     
-    public UserVO() {
+	public UserVO() {
     }
     
     public UserVO(String... strs) {
@@ -27,18 +28,10 @@ public class UserVO {
     	setZip(strs[5]);
     	setAdd1(strs[6]);
     	setAdd2(strs[7]);
-    	setTel(Integer.parseInt(strs[8]));
-    	setPhone(Integer.parseInt(strs[9]));
+    	setTel(strs[8]);
+    	setPhone(strs[9]);
     	setEmail(strs[10]);
     }
-
-	public int getIndex() {
-		return index;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
-	}
 
 	public String getId() {
 		return id;
@@ -104,19 +97,19 @@ public class UserVO {
 		this.add2 = add2;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -126,6 +119,22 @@ public class UserVO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+    public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+	
+    public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 }

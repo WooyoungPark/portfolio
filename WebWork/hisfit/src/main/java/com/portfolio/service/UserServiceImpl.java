@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public void insertUser(UserVO user) {
+		System.out.println("Service");
 		userdao.insertUser(user);
 	}
 

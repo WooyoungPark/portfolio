@@ -23,15 +23,18 @@
 		<div>
 			<jsp:include page="publicDiv/subTitle.jsp"></jsp:include>
 		</div>
-		<form id="myform" action="join.do">
+		<form id="myform"  method="post">
 			<table class="joinForm">
 				<tr>
 					<td class="sub"><span>회원구분</span> <img
 						src="resources/user/ico_required.png"></td>
-					<td class="body"><input type="radio" name="memberType"
-						value="개인" checked="checked"><span>&nbsp;개인회원</span>&nbsp;&nbsp;
-						<input type="radio" name="memberType" value="사업자"><span>&nbsp;사업자회원</span>&nbsp;&nbsp;
-						<input type="radio" name="memberType" value="외국인"><span>&nbsp;외국인회원(foreigner)</span>
+					<td class="body">
+					<input type="radio" name="memberType" value="0" checked="checked">
+						<span>&nbsp;개인회원</span>&nbsp;&nbsp;
+					<input type="radio" name="memberType" value="1">
+						<span>&nbsp;사업자회원</span>&nbsp;&nbsp;
+					<input type="radio" name="memberType" value="2">
+						<span>&nbsp;외국인회원(foreigner)</span>
 					</td>
 				</tr>
 			</table>
@@ -599,6 +602,28 @@ $('#objID').change(function() {
 
 });
 
+//회원가입 완료할때 
+function submitForm() {
+    var formData = $("#myform").serialize();
+    $.ajax({
+        type: "POST",
+        url: "ajax.join",
+        data: formData,
+        success: function(data) {
+            // 받아온 데이터 파싱 후 
+			if (data.result =="1"){
+				alert("회원가입이 완료되었습니다.");
+				goPage();
+			}     
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+        	alert("error\n"+textStatus+':' + errorThrown);
+        }        
+    });
+}
+
+function goPage() { location.href="login"; }
+
 //ID 유효성체크 후 표시
 function changeOverlapText(code){
 	  
@@ -640,7 +665,6 @@ function chkPwd(str){
 
 	 var eng = pw.search(/[a-z]/ig);
 
-	 /* var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩';:₩/?]/gi); */
 	 var spe = pw.search(/[!,@,#,$,%,^,&,*,?,_,~]/gi);
 
 	 var check = $('#pwdCheck');
@@ -710,7 +734,7 @@ $('#objEmail_domain').keyup(function(event){
 //회원가입 OK
 $("#btnOK").click(function(){
 	if (checkInfo()) {
-		$("#myform").submit(); 
+		submitForm();
 	}
 });
 

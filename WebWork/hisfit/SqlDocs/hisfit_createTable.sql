@@ -19,8 +19,8 @@ CREATE TABLE `userinfo` (
 ALTER TABLE userinfo add authority varchar(10) not null;
 
 ALTER TABLE `shoppingmall`.`userinfo` 
-CHANGE COLUMN `TEL` `TEL` CHAR(12) NULL DEFAULT NULL ,
-CHANGE COLUMN `PHONE` `PHONE` CHAR(11) NOT NULL ;
+CHANGE COLUMN `TEL` `TEL` CHAR(14) NULL DEFAULT NULL ,
+CHANGE COLUMN `PHONE` `PHONE` CHAR(13) NOT NULL ;
 
 ALTER TABLE `shoppingmall`.`userinfo` 
 DROP COLUMN `index`,
@@ -29,7 +29,7 @@ ADD PRIMARY KEY (`ID`),
 DROP INDEX `index_UNIQUE` ;
 
 ALTER TABLE `shoppingmall`.`userinfo` 
-ADD COLUMN `type` INT(1) NOT NULL AFTER `authority`;
+ADD COLUMN `type` INT(1) NOT NULL AFTER `authority`;userinfo
 
 
 CREATE TABLE PRODUCT_CATEGORY_TB(
