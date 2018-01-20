@@ -24,36 +24,35 @@
 					<tr>
 						<td style="width: 600px;">
 							<div class="tableDiv">
-								<img class="tableCenter" alt="product" src="resources/product/shirts/cart1.jpg">
+								<img class="tableCenter" alt="product" src="${product.IMG_PATH}">
 							</div>
 						</td>
 						<td style="width: 500px">
 							<table class="pull-right" style="margin-bottom:100px;">
 								<thead>
 									<tr class="head">
-										<th colspan="4" style="width:400px;"><img src="resources/product/custom_24.gif"><br>디테일 롱 패딩</th>
+										<th colspan="4" style="width:400px;"><img src="resources/product/custom_24.gif"><br>${product.product_name}</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr class="top">
-										<td colspan="4">★한정 수량 세일판매★</td>
+										<td colspan="4">${product.product_subTitle}</td>
 									</tr>
 									<tr  class="top">
 										<td>소비자가</td>
-										<td colspan="3">99,000원</td>
+										<td colspan="3">${product.product_price}</td>
 									</tr>
 									<tr>
 										<td>판매가</td>
-										<td colspan="3">78,000원</td>
+										<td colspan="3">${product.product_discount}</td>
 									</tr>
 									<tr class="top">
-										<td colspan="2">2 color / 1 size</td>
+										<td colspan="2">${product.color} color / ${product.size} size</td>
 									</tr>
 									<tr class="top">
 										<td>> 컬러</td>
 										<td colspan="3"><select style="height: 25px;">
-												<option value="0">블랙</option>
-												<option value="1">카키</option>
+												<option value="0">${product.color}</option>
 										</select></td>
 									</tr>
 									<tr class="top">
@@ -103,8 +102,7 @@
 			</table>
 		</div>
 		<div class="tableDiv">
-				<img style="display: block; margin-left: auto; margin-right:auto;"alt="" src="resources/product/0start.jpg">
-				
+				<img style="display: block; margin-left: auto; margin-right:auto;"alt="" src="resources/product/0start.jpg">			
 				<img style="display: block; margin-left: auto; margin-right:auto;"alt="" src="resources/product/Detail Long Padding (1)_shop1.jpg">
 				<img style="display: block; margin-left: auto; margin-right:auto;"alt="" src="resources/product/Detail Long Padding (2)_shop1.jpg">
 				<img style="display: block; margin-left: auto; margin-right:auto;"alt="" src="resources/product/Detail Long Padding (3)_shop1.jpg">

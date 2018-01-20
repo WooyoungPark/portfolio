@@ -4,10 +4,19 @@
 
 <mapper namespace="com.Mappers.ProductMapper">
 
-	<select id="getProductByCategory" parameterType="int"  resultType="productListVO">
-	 	SELECT product_name, product_price, color, size, product_subTitle, bPopularity, img_path  
+	<select id="getProductByCategory" parameterType="int"
+		resultType="productListVO">
+		SELECT product_ID, product_name, product_price, color, size, product_subTitle,
+			bPopularity, img_path, category
 		FROM product_tb
 		WHERE category = #{nCategory}
+	</select>
+
+	<select id="getProductByID" parameterType="int" resultType="productVO">
+		SELECT product_ID, product_name, product_subTitle, product_price, product_discount,
+			color, size, quantity, IMG_PATH, delivery_price
+		FROM product_tb
+		WHERE product_ID = #{nProductID}
 	</select>
 </mapper>
  

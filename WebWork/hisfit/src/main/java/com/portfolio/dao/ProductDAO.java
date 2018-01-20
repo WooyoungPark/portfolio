@@ -3,6 +3,7 @@ package com.portfolio.dao;
 import java.util.List;
 
 import com.portfolio.dto.ProductListVO;
+import com.portfolio.dto.ProductVO;
 
 /**
  * <pre> 
@@ -21,4 +22,5 @@ import com.portfolio.dto.ProductListVO;
  */
 public interface ProductDAO {
 	public List<ProductListVO> getProductByCategory(int nCategory);
+	public ProductVO getProductByID(int nProductID);
 }

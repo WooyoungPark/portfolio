@@ -10,14 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.portfolio.dto.ProductListVO;
+import com.portfolio.dto.ProductVO;
 import com.portfolio.service.ProductService;
 
 @Controller
 public class ProductController {
-	
+
 	@Autowired
 	private ProductService service;
-	
+
 	@RequestMapping("/productList")
 	public String product(Model model, HttpServletRequest request) {
 		int nCategory = Integer.parseInt(request.getParameter("nCategory")); // Get Menuflag
@@ -77,25 +78,28 @@ public class ProductController {
 			strTitle = "";
 			bBestDIV = false;
 		}
-		
+
 		List<ProductListVO> productList = service.getProductByCategory(nCategory);
-		System.out.println("productListSize : "+productList.size());
+		System.out.println("productListSize : " + productList.size());
 		model.addAttribute("productList", productList);
 		model.addAttribute("title", strTitle);
 		model.addAttribute("BestDIV", bBestDIV);
 		return "productList";
 	}
-	
+
 	@RequestMapping("/productDetail")
 	public String productDetail(Model model, HttpServletRequest request) {
 		int nCategory;
+		int nProductID;
+		nProductID = Integer.parseInt(request.getParameter("productID"));
+		
 		try {
-			nCategory = Integer.parseInt(request.getParameter("nCategory")); // Get Menuflag
+			nCategory = Integer.parseInt(request.getParameter("category")); // Get Menuflag
 		} catch (NullPointerException ne) {
-			System.out.println("NullPointerException : "+ne);
-			nCategory = -1;	//default 처리
+			System.out.println("NullPointerException : " + ne);
+			nCategory = -1; // default 처리
 		} catch (NumberFormatException fe) {
-			System.out.println("NuberFormatException : "+fe);
+			System.out.println("NuberFormatException : " + fe);
 			nCategory = -1;
 		}
 		String strTitle;
@@ -140,9 +144,16 @@ public class ProductController {
 		default:
 			strTitle = "";
 		}
-		
+
 		model.addAttribute("title", strTitle);
-		
-		return "productDetail";
+		ProductVO product = service.getProductByID(nProductID);
+		model.addAttribute("product", product);
+		model.addAttribute("title", strTitle);
+
+		if (nProductID != 0) {
+			return "productDetail";
+		} else {
+			return "error";
+		}
 	}
 }

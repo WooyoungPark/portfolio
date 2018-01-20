@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.portfolio.dao.ProductDAO;
 import com.portfolio.dto.ProductListVO;
+import com.portfolio.dto.ProductVO;
 
 @Service("productService")
 public class ProductServiceImpl implements ProductService {
@@ -17,5 +18,10 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<ProductListVO> getProductByCategory(int nCategory) {
 		return productdao.getProductByCategory(nCategory);
+	}
+
+	@Override
+	public ProductVO getProductByID(int nProductID) {
+		return productdao.getProductByID(nProductID);
 	}
 }

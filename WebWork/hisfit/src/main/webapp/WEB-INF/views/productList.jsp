@@ -50,19 +50,25 @@
 
 			<hr class="margin0">
 			<div class="row">
-				<c:forEach items = "${productList}" var="product">
-					<div class="col-xs-4">
-						<div>
-							<img style="width: 100%" class="fullWidth"
-								src='${product.img_path}'>
-						</div>
-						<div class="topMargin">Product name</div>
-						<div class="fullWidth topBorder colorGray"
-							style="margin-top: 5px; padding-top: 5px;">
-							<span style="font-size: 12px; color: #009ADB">${product.product_price}원</span><br>
-							<span style="font-size: 12px;">${product.color} Color / ${product.size} Size</span><br>
-							<span style="font-size: 12px;">${product.product_subTitle}</span>
-						</div>
+				<c:forEach items="${productList}" var="product">
+					<div class="col-xs-4" onclick="detailView(this)">
+						<form name="listItem" action="productDetail">
+							<div>
+								<img style="width: 100%" class="fullWidth"
+									src='${product.img_path}'>
+							</div>
+							<div class="topMargin">${product.product_name}</div>
+							<div class="fullWidth topBorder colorGray"
+								style="margin-top: 5px; padding-top: 5px;">
+								<span style="font-size: 12px; color: #009ADB">${product.product_price}원</span><br>
+								<span style="font-size: 12px;">${product.color} Color /
+									${product.size} Size</span><br> <span style="font-size: 12px;">${product.product_subTitle}</span>
+							</div>
+							<input type="hidden" name="productID"
+								value="${product.product_ID}">
+							<input type="hidden" name="category"
+								value="${product.category}">
+						</form>
 					</div>
 				</c:forEach>
 			</div>
@@ -74,6 +80,11 @@
 	$(document).ready(function() {
 		useBestItem("${BestDIV}");
 	});
+	function detailView(obj) {
+		var form = $(obj).find("form[name=listItem]");
+		console.log(form);
+		form.submit();
+	}
 </script>
 <jsp:include page="publicDiv/footer.jsp"></jsp:include>
 

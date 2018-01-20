@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.Mappers.ProductMapper;
 import com.portfolio.dto.ProductListVO;
+import com.portfolio.dto.ProductVO;
 
 /**
  * <pre> 
@@ -33,6 +34,13 @@ public class ProductDAOImpl implements ProductDAO{
 	public List<ProductListVO> getProductByCategory(int nCategory) {
 		List<ProductListVO> productList = productMapper.getProductByCategory(nCategory);
 		return productList;
+	}
+
+	@Override
+	public ProductVO getProductByID(int nProductID) {
+		// TODO Auto-generated method stub
+		ProductVO product = productMapper.getProductByID(nProductID);
+		return product;
 	}
 
 }

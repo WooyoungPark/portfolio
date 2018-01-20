@@ -1,12 +1,22 @@
 package com.portfolio.dto;
 
 public class ProductListVO {
+	private int product_ID;
 	private String product_name;
 	private int product_price;
 	private String color;
 	private String size;
 	private String product_subTitle;
 	private String img_path;
+	private int category;
+	
+	public int getProduct_ID() {
+		return product_ID;
+	}
+
+	public void setProduct_ID(int product_ID) {
+		this.product_ID = product_ID;
+	}
 
 	public String getProduct_name() {
 		return product_name;
@@ -56,4 +66,13 @@ public class ProductListVO {
 		this.img_path = img_path;
 	}
 
+	public int getCategory() {
+		return category;
+	}
+
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
+	
 }

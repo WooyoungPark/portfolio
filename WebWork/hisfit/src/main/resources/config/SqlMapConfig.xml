@@ -7,5 +7,6 @@
         	<typeAlias type="com.portfolio.dto.OrderVO" alias="orderVO"/>
         	<typeAlias type="com.portfolio.dto.UserVO" alias="userVO"/>
         	<typeAlias type="com.portfolio.dto.ProductListVO" alias="productListVO"/>
+         	<typeAlias type="com.portfolio.dto.ProductVO" alias="productVO"/>
         </typeAliases>
     </configuration>

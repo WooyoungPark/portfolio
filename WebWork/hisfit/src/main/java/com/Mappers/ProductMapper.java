@@ -3,6 +3,7 @@ package com.Mappers;
 import java.util.List;
 
 import com.portfolio.dto.ProductListVO;
+import com.portfolio.dto.ProductVO;
 
 /**
  * <pre> 
@@ -22,4 +23,5 @@ import com.portfolio.dto.ProductListVO;
 @MyMapper
 public interface ProductMapper {
 	public List<ProductListVO> getProductByCategory(int nCategory);
+	public ProductVO getProductByID(int nProductID);
 }
