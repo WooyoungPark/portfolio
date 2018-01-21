@@ -20,8 +20,8 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">LOGIN <span class="sr-only">(current)</span></a></li>
-					<li><a href="#">JOIN US</a></li>
+					<li class="active"><a href="/hisfit/login">LOGIN <span class="sr-only">(current)</span></a></li>
+					<li><a href="/hisfit/join">JOIN US</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(100);">CART&nbsp;<span class="badge">0</span></a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(101);">ORDER</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
