@@ -13,4 +13,7 @@
     <fullyQualifiedTypeName name="com.portfolio.dto.productListVO"/>
     <fullyQualifiedTypeName name="com.portfolio.dto.ProductListVO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="com.portfolio.dto.ProductVO"/>
 </qualifiedTypeNameHistroy>

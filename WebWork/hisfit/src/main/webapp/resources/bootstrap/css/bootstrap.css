@@ -3763,6 +3763,75 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	margin-right:3px;
 	margin-bottom:15px;
 }
+
+.notice{
+	width: 100%;
+	font-size:12px;
+}
+.notice td{
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	height:42px;
+}
+.notice .no{
+	width:60px;
+}
+.notice .title{
+	width:900px;
+	padding-left: 20px;
+}
+.notice .writer{
+	width: 100px;
+}
+.notice .date{
+	width:auto;
+}
+.notice th{
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	font-weight: lighter;
+	font-size: 11px;
+	height:38px;
+}
+.writeBtn{
+	border: none;
+    text-decoration: none;
+	width:85px;
+	height:32px;
+	font-size:12px;
+	background-image: none;
+	background-color:#393939;
+	border-radius:7px;
+	color:white;
+	margin-top:12px;
+	margin-left:0px;
+	margin-right:3px;
+	margin-bottom:15px;
+}
+.search{
+	width:360px;
+	height:30px;
+	padding-top:3px;
+	font-size:13px;
+}
+.search  input[type=text], button{
+	height:100%;
+	margin:0;
+}
+.search select{
+	height:23px;
+}
+.search button{
+	border: 1px solid #A9A9A9;
+    text-decoration: none;
+	width:auto;
+	height:100%;
+	background-image: none;
+	background-color:white;
+	border-radius:3px;
+	color:#A9A9A9;
+}
+
 .btn {
 	display: inline-block;
 	margin-bottom: 0;
