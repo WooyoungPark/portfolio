@@ -121,3 +121,5 @@ function deleteCheck() {
 function login(){
 	$('#normalloginForm').submit();
 }
+
+

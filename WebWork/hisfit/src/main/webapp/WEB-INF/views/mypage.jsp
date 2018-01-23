@@ -48,7 +48,7 @@
 				</div>
 				<div class="btn-group fontSize8" style="margin-top: 8px;">
 					<button class="btn grayButton optionButton"
-						style="font-size: 11px; margin-right: 3px;">프로필 수정</button>
+						style="font-size: 11px; margin-right: 3px;" id="btnModify">프로필 수정</button>
 					<button class="btn grayButton optionButton"
 						style="font-size: 11px; margin-right: 3px;">배송주소록 관리</button>
 				</div>
@@ -278,4 +278,10 @@
 	</div>
 </body>
 <jsp:include page="publicDiv/footer.jsp"></jsp:include>
+
+<script>
+	$("#btnModify").click(function(){
+		location.replace("/hisfit/modify");
+	});
+</script>
 </html>

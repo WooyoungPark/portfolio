@@ -17,6 +17,23 @@
 		#{tel},#{phone},#{email},#{authority},#{type})
 	</insert>
 	
+	<update id="updateUser" parameterType="userVO">
+		update userinfo set
+			pwd =	#{pwd},
+			pwdq =	#{pwdQ},
+			pwda =	#{pwdA},
+			name =	#{name},
+			zip =	#{zip},
+			add1 =	#{add1},
+			add2 =	#{add2},
+			tel =	#{tel},
+			phone = #{phone},
+			email = #{email},
+			authority = #{authority},
+			type = #{type}
+		where id = #{id}
+	</update>
+	
 	
 <!-- 	<select id="selectUserList" resultType="User">
 		select * from userinfo order by userid

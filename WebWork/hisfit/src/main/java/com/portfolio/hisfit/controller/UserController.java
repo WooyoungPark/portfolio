@@ -61,8 +61,16 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value="/ajax.join", method=RequestMethod.POST)
 	public Map<String , String> joinOK(@RequestParam HashMap<String, Object> params) {
-//		System.out.println(params);
-		UserVO user = new UserVO();
+		System.out.println(params);
+		boolean isJoin = false;
+		UserVO user = service.getUserByID(params.get("id").toString());
+		
+		if (user == null){
+			//회원가입
+			user = new UserVO();
+			isJoin = true;
+		}
+		
 		user.setId(params.get("id").toString());
 		user.setPwd(params.get("pwd").toString());
 		user.setPwdQ( Integer.parseInt(params.get("pwdQ").toString()));
@@ -77,7 +85,11 @@ public class UserController {
 		user.setType(Integer.parseInt(params.get("memberType").toString()));
 		user.setAuthority("ROLE_USER");
 		
-		service.insertUser(user);
+		if (isJoin) {
+			service.insertUser(user);
+		}else {
+			service.updateUser(user);
+		}
 	    
 	    Map<String , String> map = new  HashMap<String, String>();
 	    map.put("result", "1");

@@ -24,7 +24,7 @@
 			<jsp:include page="publicDiv/subTitle.jsp"></jsp:include>
 		</div>
 		<form id="myform"  method="post">
-			<table class="joinForm">
+			<table class="joinForm" id = "tb_memberType">
 				<tr>
 					<td class="sub"><span>회원구분</span> <img
 						src="resources/user/ico_required.png"></td>
@@ -46,7 +46,9 @@
 				<tr>
 					<td class="sub"><span>아이디</span> <img
 						src="resources/user/ico_required.png"></td>
-					<td class="body"><input type="text" name="id" id="objID" value="" maxlength="16">
+					<td class="body">
+					
+					<input type="text" name="id" id="objID" value="" maxlength="16">
 						<span>(영문소문자/숫자, 4~16자)</span> <span id='overlap'></span></td>
 				</tr>
 				<tr>
@@ -68,49 +70,52 @@
 				<tr>
 					<td class="sub"><span>비밀번호 확인 질문</span> <img
 						src="resources/user/ico_required.png"></td>
-					<td class="body" id="objPDW_qes"><select style="height: 25px;" name="pwdQ">
-							<option value="0">기억에 남는 추억의 장소는?</option>
-							<option value="1">자신의 인생 좌우명은?</option>
-							<option value="2">자신의 보물 제1호는?</option>
-							<option value="3">가장 기억에 남는 선생님 성함은?</option>
-							<option value="4">타인이 모르는 자신만의 신체비밀이 있다면?</option>
-							<option value="5">추억하고 싶은 날짜가 있다면?</option>
-							<option value="6">받았던 선물 중 기억에 남는 독특한 선물은?</option>
-							<option value="7">유년시절 가장 생각나는 친구 이름은?</option>
-							<option value="8">인상 깊게 읽은 책 이름은?</option>
-							<option value="9">읽은 책 중에서 좋아하는 구절이 있다면?</option>
-							<option value="10">자신이 두번째로 존경하는 인물은?</option>
-							<option value="11">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
-							<option value="12">초등학교 때 기억에 남는 짝꿍의 이름은?</option>
-							<option value="13">다시 태어나면 되고 싶은 것은?</option>
-							<option value="14">내가 좋아하는 캐릭터는?</option>
-					</select></td>
+					<td class="body" id="objPDW_qes">
+						<select style="height: 25px;" name="pwdQ" id="pwdQ">
+								<option value="0">기억에 남는 추억의 장소는?</option>
+								<option value="1">자신의 인생 좌우명은?</option>
+								<option value="2">자신의 보물 제1호는?</option>
+								<option value="3">가장 기억에 남는 선생님 성함은?</option>
+								<option value="4">타인이 모르는 자신만의 신체비밀이 있다면?</option>
+								<option value="5">추억하고 싶은 날짜가 있다면?</option>
+								<option value="6">받았던 선물 중 기억에 남는 독특한 선물은?</option>
+								<option value="7">유년시절 가장 생각나는 친구 이름은?</option>
+								<option value="8">인상 깊게 읽은 책 이름은?</option>
+								<option value="9">읽은 책 중에서 좋아하는 구절이 있다면?</option>
+								<option value="10">자신이 두번째로 존경하는 인물은?</option>
+								<option value="11">친구들에게 공개하지 않은 어릴 적 별명이 있다면?</option>
+								<option value="12">초등학교 때 기억에 남는 짝꿍의 이름은?</option>
+								<option value="13">다시 태어나면 되고 싶은 것은?</option>
+								<option value="14">내가 좋아하는 캐릭터는?</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td class="sub"><span>비밀번호 확인 답변</span> <img
 						src="resources/user/ico_required.png"></td>
-					<td class="body"><input type="text" id="objPWD_answer" value="" name="pwdA"
-						style="width: 500px;"></td>
+					<td class="body">
+					<input type="text" id="objPWD_answer" value="" name="pwdA" style="width: 500px;"></td>
 				</tr>
 				<tr>
 					<td class="sub"><span>이름</span> <img
 						src="resources/user/ico_required.png"></td>
-					<td class="body"><input type="text" id="objName" value="" name="name" maxlength="16">
+					<td class="body">
+						<input type="text" id="objName" value="" name="name" maxlength="16">
 					</td>
 				</tr>
 				<tr>
 					<td class="sub"><span>주소</span> <img
 						src="resources/user/ico_required.png"></td>
 					<td class="body"><input type="text" id="objPOST" value=""  maxlength="6" name="zip"><br>
-						<input type="text" id="objAdress" value=""  maxlength="50" name="add1"> <span>기본&nbsp;주소</span><br>
+						<input type="text" id="objAdress" value=""  maxlength="50" name="add1" > <span>기본&nbsp;주소</span><br>
 						<input type="text" id="objAdress_detail" value=""  maxlength="50" name="add2"> <span>나머지&nbsp;주소</span>
 	
 					</td>
 				</tr>
 				<tr>
 					<td class="sub"><span>일반전화</span></td>
-					<td class="body"><select id="objTell_region"
-						style="height: 25px;" name="tel1">
+					<td class="body">
+					<select id="objTell_region"	style="height: 25px;" name="tel1">
 							<option value="02">02</option>
 							<option value="031">031</option>
 							<option value="032">032</option>
@@ -157,9 +162,10 @@
 							<option value="017">017</option>
 							<option value="018">018</option>
 							<option value="019">019</option>
-					</select> <span>-</span> <input type="text" id="objCell_mid" value=""
-						size="4" maxlength="4" name="phone2"> <span>-</span> <input type="text"
-						id="objCell_div" value="" size="4" maxlength="4" name="phone3"></td>
+					</select> <span>-</span> 
+					<input type="text" id="objCell_mid" value=""
+						size="4" maxlength="4" name="phone2"> <span>-</span> 
+					<input type="text" id="objCell_div" value="" size="4" maxlength="4" name="phone3"></td>
 				</tr>
 				<tr>
 					<td class="sub"><span>이메일</span> <img
@@ -236,7 +242,7 @@
 					</td>
 				</tr>
 			</table>
-			<table class="joinForm">
+			<table class="joinForm" id="tb_agree">
 				<caption>
 					<strong>전체동의</strong>
 				</caption>
@@ -537,7 +543,9 @@
 						type="checkbox" name="chkAgree"><span><strong>동의함</strong></span>
 					</td>
 				</tr>
-				
+			</table>
+			
+			<table class="joinForm" >
 				<tr>
 					<td colspan="2">
 						<div>
@@ -556,23 +564,94 @@
 
 var blnIdOverlapPass = false;
 var blnPwdPass = false;
+var isJoin = true;	//회원가입페이지 : true / 정보수정 페이지 : false
+
+$( document ).ready(function() {
+	var title = '<c:out value="${title}"/>';
+	console.log( title );
+	
+	//정보수정 화면일경우 회원 정보 뿌려주기
+	if (title =='Modify Page'){
+		blnIdOverlapPass= true;
+		isJoin = false;
+		
+		$('#tb_memberType').hide();
+		$('#tb_agree').hide();
+		$('#btnOK').text("수정");
+		
+		var value;
+		//ID 
+		value = '<c:out value="${user.id}"/>'
+		$('#objID').val(value);
+		$('input[name=id]').attr("readonly", true);
+		
+		//비밀번호 확인 답변
+		value = '<c:out value="${user.pwdQ}"/>'
+		$("#pwdQ").val(value).prop("selected", true);
+		
+		//비밀번호 확인 답변
+		value = '<c:out value="${user.pwdA}"/>'
+		$('#objPWD_answer').val(value);
+		
+		//이름
+		value = '<c:out value="${user.name}"/>'
+		$('#objName').val(value);
+		$('input[name=name]').attr("readonly", true);
+		
+		//주소
+		value = '<c:out value="${user.zip}"/>'
+		$('#objPOST').val(value);
+		
+		value = '<c:out value="${user.add1}"/>'
+		$('#objAdress').val(value);
+		
+		value = '<c:out value="${user.add2}"/>'
+		$('#objAdress_detail').val(value);
+		
+		//일반전화
+		value = '<c:out value="${user.tel}"/>'
+		var split = value.split('/');
+		$("#objTell_region").val(split[0]).prop("selected", true);
+		$('#objTell_mid').val(split[1]);
+		$('#objTell_div').val(split[2]);
+		
+		//휴대전화
+		value = '<c:out value="${user.phone}"/>'
+		split = value.split('/');
+		$("#objCell_region").val(split[0]).prop("selected", true);
+		$('#objCell_mid').val(split[1]);
+		$('#objCell_div').val(split[2]);
+		
+		//이메일
+		value = '<c:out value="${user.email}"/>'
+		split = value.split('@');
+		$('#objEmail_ID').val(split[0]);
+		$('#objEmail_domain').val(split[1]);
+		$("#objDomain_List").val(split[1]).prop("selected", true);
+	};
+    
+});
+
 
 /* ID 영문 및 숫자 입력  */
 $('#objID').keydown(function(event){
-	console.log("keydown : false"); 
-	blnIdOverlapPass = false;
-	if(!(event.keyCode >=37 && event.keyCode <=40)){
-		var inputVal = $(this).val();
-		$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
-		$(this).val($(this).val().toLowerCase());
+	if (isJoin){
+		console.log("keydown : false"); 
+		blnIdOverlapPass = false;
+		if(!(event.keyCode >=37 && event.keyCode <=40)){
+			var inputVal = $(this).val();
+			$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+			$(this).val($(this).val().toLowerCase());
+		}
 	}
 });
 
 //ID 유효성 검사
 $('#objID').change(function() {
+	console.log("왔어");
 	var id = $("#objID").val();
-
-	if( $("#objID").val().length < 5 ){
+   
+	if( $("#objID").val().length < 4 ){
 		changeOverlapText(1);
 
 	}else if (id != ""){
@@ -612,7 +691,11 @@ function submitForm() {
         success: function(data) {
             // 받아온 데이터 파싱 후 
 			if (data.result =="1"){
-				alert("회원가입이 완료되었습니다.");
+				var text = "회원가입이 완료되었습니다."
+				if (!isJoin){
+					text = "정보가 수정이 완료되었습니다."	
+				}
+				alert(text);
 				goPage();
 			}     
         },
@@ -738,7 +821,7 @@ $("#btnOK").click(function(){
 	}
 });
 
-//입력 정보들 체크
+//입력 정보 모두 유효성 체크
 function checkInfo(){
 	if (!blnIdOverlapPass){
 		alert("ID를 다시 입력해주세요");
@@ -785,9 +868,11 @@ function checkInfo(){
 		return false;
 	}
 
-	if ($('input:checkbox[name="chkAgree"]').length != $('input:checkbox[name="chkAgree"]:checked').length){
-		alert("이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신에 동의해주세요.");
-		return false;
+	if(isJoin){
+		if ($('input:checkbox[name="chkAgree"]').length != $('input:checkbox[name="chkAgree"]:checked').length){
+			alert("이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신에 동의해주세요.");
+			return false;
+		}
 	}
 
 	return true;

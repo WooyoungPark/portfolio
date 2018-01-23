@@ -24,4 +24,5 @@ public interface UserMapper {
 	public UserVO getUserByID(String id);
 	public String checkID(String id);
 	public void insertUser(UserVO user);
+	public void updateUser(UserVO user);
 }

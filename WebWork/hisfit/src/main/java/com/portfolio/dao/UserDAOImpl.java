@@ -42,7 +42,6 @@ public class UserDAOImpl implements UserDAO{
 		
 		UserVO user = userMapper.getUserByID(id);
 		return user;
-		
 	}
 	
 	@Override
@@ -54,6 +53,11 @@ public class UserDAOImpl implements UserDAO{
 	public void insertUser(UserVO user) {
 		userMapper.insertUser(user);
 	}
+	
+	@Override
+	public void updateUser(UserVO user) {
+		userMapper.updateUser(user);
+	}
 
 	@Override
 	public List<UserVO> readAll() {
@@ -62,19 +66,7 @@ public class UserDAOImpl implements UserDAO{
 		return null;
 	}
 
-	@Override
-	public void updateUser(UserVO user) {
-		StringBuffer updateQuery = new StringBuffer();
-		updateQuery.append("UPDATE userinfo SET ");
-		updateQuery.append("pwd=?, name=? ");
-		updateQuery.append("Where id=?");
-		
-//		int result = this.jdbcTemplate.update(updateQuery.toString(), user.getPwd(), user.getName() , user.getId());
-		
-//		return result;
-		
-		
-	}
+
 
 	@Override
 	public void deleteUser(String id) {
