@@ -16,14 +16,20 @@
 		 <intercept-url pattern="/product*" access="permitAll" />
 		 <intercept-url pattern="/cart*" access="permitAll" />
 		 <intercept-url pattern="/join*" access="permitAll" />
+		 <intercept-url pattern="/notice*" access="permitAll" />
+		 <intercept-url pattern="/event*" access="permitAll" />
+		 <intercept-url pattern="/review*" access="permitAll" />
+		 <intercept-url pattern="/qna*" access="permitAll" />
 		 <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 		 <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
 		 <form-login login-page="/loginPage"
 		   login-processing-url="/login"
-		   
 		   always-use-default-target="true"
 		   default-target-url="/"
 		   username-parameter="username" password-parameter="password" />
+		 <logout logout-success-url="/"/>
+
+		   
 	</http> 
 
 	<authentication-manager>

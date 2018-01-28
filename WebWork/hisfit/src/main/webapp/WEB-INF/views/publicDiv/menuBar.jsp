@@ -1,5 +1,11 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+
 <div class="container">
 	<!-- <nav class="navbar navbar-default"> 
 	 <div class="container-fluid"> -->
@@ -13,24 +19,24 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">HOME</a>
+				<a class="navbar-brand" href="/hisfit">HOME</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/hisfit/login">LOGIN <span class="sr-only">(current)</span></a></li>
-					<li><a href="/hisfit/join">JOIN US</a></li>
-					<li><a href="javascript:void(0);" onclick="selectMenu(100);">CART&nbsp;<span class="badge">0</span></a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(100);">CART&nbsp;<span
+							class="badge">0</span></a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(101);">ORDER</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-expanded="false" onclick="selectMenu(102)">MY
-							PAGE <span class="caret"></span>
+					<li class="dropdown"><a href="javascript:void(0)"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-expanded="false" onclick="selectMenu(102)">MY PAGE <span
+							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu" role="menu">
 							<li role="presentation"><a href="#">관심상품</a></li>
-							<li><a href="#">주문조회</a></li>
+							<li><a href="javascript:void(0)" onclick="selectMemu(101);">주문조회</a></li>
 							<li><a href="#">Something else here</a></li>
 							<li class="divider"></li>
 							<li><a href="#">Separated link</a></li>
@@ -40,11 +46,29 @@
 					<li><a href="#">+BOOKMARK</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">NOTICE</a></li>
-					<li><a href="#">EVENT</a></li>
-					<li><a href="#">REVIEW</a></li>
-					<li><a href="#">Q & A</a></li>
-					<li><a href="#">코디북</a></li>
+					<li><a href="notice">NOTICE</a></li>
+					<li><a href="event">EVENT</a></li>
+					<li><a href="review">REVIEW</a></li>
+					<li><a href="qna">Q & A</a></li>
+					<sec:authorize access="isAnonymous()">
+						<li><a href="/hisfit/login">LOGIN</a></li>
+						<li><a href="/hisfit/join">JOIN US</a></li>
+					</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+						<li><a href='<c:url value="/j_spring_security_logout" />'>LOGOUT</a></li>
+					</sec:authorize>
+
+
+ 
+					<%-- <sec:authorize
+						access="hasRole('ROLE_ADMIN')">
+						<li><a href="/hisfit/login">LOGIN</a></li>
+						<li><a href="/hisfit/join">JOIN US</a></li>
+					</sec:authorize>
+					<sec:authorize
+						access="hasRole('ROLE_ADMIN') and hasRole('ROLE_USER')">
+						<li><a href='<c:url value="/j_spring_security_logout" />'>LOGOUT</a></li>
+					</sec:authorize>  --%>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -421,8 +445,11 @@
 							</ul>
 						</ul></li>
 
-					<li><a href="javascript:void(0);" onclick="selectMenu(0);">BEST 50 <span class="sr-only">(current)</span></a></li>
-					<li><a href="javascript:void(0);" onclick="selectMenu(1);">NEW Discount</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(0);">BEST
+							50 <span class="sr-only">(current)</span>
+					</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(1);">NEW
+							Discount</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(2);">OUTWEAR</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(3);">TOP</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(4);">SHIRTS</a></li>
@@ -431,7 +458,8 @@
 					<li><a href="javascript:void(0);" onclick="selectMenu(7);">BAG</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(8);">ACC</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(9);">SALE</a></li>
-					<li><a href="javascript:void(0);" onclick="selectMenu(10);">ONLY ONE</a></li>
+					<li><a href="javascript:void(0);" onclick="selectMenu(10);">ONLY
+							ONE</a></li>
 					<li><a href="javascript:void(0);" onclick="selectMenu(11);">COUPLE</a></li>
 				</ul>
 			</div>

@@ -10,26 +10,31 @@ import com.portfolio.dto.ProductListVO;
 import com.portfolio.dto.ProductVO;
 
 /**
- * <pre> 
+ * <pre>
+ *  
  * com.portfolio.dao
  * ProductDAOImpl.java
  * [ Description ]
  * 
  * </pre>
+ * 
  * [ History ]
- * @author	 박우영
- * @Date		 2018. 1. 19. 오후 6:17:07
- * <pre>
+ * 
+ * @author 박우영
+ * @Date 2018. 1. 19. 오후 6:17:07
+ * 
+ *       <pre>
  * ---- 수정이력[Name - Date - Description] ----
  * 박우영 - 2018. 1. 19. - 최초생성
- * </pre>
+ * 박우영 - 2018. 1. 28. - getProductAll 추가(MainPage)
+ *       </pre>
  */
 @Repository("productDao")
-public class ProductDAOImpl implements ProductDAO{
+public class ProductDAOImpl implements ProductDAO {
 
 	@Autowired
 	private ProductMapper productMapper;
-	
+
 	@Override
 	public List<ProductListVO> getProductByCategory(int nCategory) {
 		List<ProductListVO> productList = productMapper.getProductByCategory(nCategory);
@@ -41,6 +46,11 @@ public class ProductDAOImpl implements ProductDAO{
 		// TODO Auto-generated method stub
 		ProductVO product = productMapper.getProductByID(nProductID);
 		return product;
+	}
+
+	@Override
+	public List<ProductListVO> getProductAll() {
+		return productMapper.getProductAll();
 	}
 
 }

@@ -8,5 +8,7 @@
         	<typeAlias type="com.portfolio.dto.UserVO" alias="userVO"/>
         	<typeAlias type="com.portfolio.dto.ProductListVO" alias="productListVO"/>
          	<typeAlias type="com.portfolio.dto.ProductVO" alias="productVO"/>
+         	<typeAlias type="com.portfolio.dto.BoardVO" alias="boardVO"/>
+         	<typeAlias type="com.portfolio.dto.BoardProductVO" alias="boardproductVO"/>
         </typeAliases>
     </configuration>

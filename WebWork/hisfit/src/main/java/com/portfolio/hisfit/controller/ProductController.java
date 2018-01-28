@@ -80,7 +80,6 @@ public class ProductController {
 		}
 
 		List<ProductListVO> productList = service.getProductByCategory(nCategory);
-		System.out.println("productListSize : " + productList.size());
 		model.addAttribute("productList", productList);
 		model.addAttribute("title", strTitle);
 		model.addAttribute("BestDIV", bBestDIV);

@@ -3776,15 +3776,28 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 .notice .no{
 	width:60px;
 }
+.notice .img{
+	width:auto;
+}
+.notice img{
+	width:70px;
+	height:auto;
+	padding:5px;
+}
 .notice .title{
 	width:900px;
 	padding-left: 20px;
+}
+.notice .title2{
+	width:800px;
+	padding-left: 20px;
+	
 }
 .notice .writer{
 	width: 100px;
 }
 .notice .date{
-	width:auto;
+	width:100px;
 }
 .notice th{
 	border-top: 1px solid #DDDDDD;
@@ -3830,6 +3843,30 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	background-color:white;
 	border-radius:3px;
 	color:#A9A9A9;
+}
+.mainBoard{
+	width: 100%; 
+	height: 150px; 
+	margin-top: 30px; 
+	margin-bottom: 30px;
+}
+.mainBoard td{
+	width: 25%; 
+	height: 100%; 
+	padding-left: 30px;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+.mainBoard div{
+	border-right: 1px solid #DDDDDD;
+}
+.mainBoard span{
+	font-weight : bold;
+	font-size : 13px;
+}
+.mainBoard a{
+	color:black;
+	font-size : 12px;
 }
 
 .btn {

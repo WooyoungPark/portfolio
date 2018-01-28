@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>여자가 코디해주는 남자쇼핑몰 히즈핏</title>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
 <link rel="stylesheet"
@@ -16,8 +16,7 @@
 </head>
 <body>
 	<jsp:include page="publicDiv/menuBar.jsp"></jsp:include>
-	<div class="container" style="height: 800px; background: hotpink;">
-
+	<div class="container">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -25,8 +24,6 @@
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>
-
-			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<div class="item active">
 					<img src="resources/banner/Banner1.PNG" alt="Banner1">
@@ -48,26 +45,74 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
-		<table>
-        <thead>
-            <tr>
-                <th>아이디</th>
-                <th>비밀번호</th>
-                <th>이름</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach items="${memberList}" var="member">
-                <tr>
-                    <td>${member.order_NO}</td>
-                    <td>${member.order_quantity}</td>
-                    <td>${member.IMG_path}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+		<table class="mainBoard">
+			<tr>
+				<td>
+					<div>
+						<span>Notice</span><br>
+						<c:forEach items="${listNotice}" var="listNotice">
+							<input type="hidden" name="idx" value='${listNotice.nIndex}'>
+							<a>${listNotice.strTitle }</a>
+							<br>
+						</c:forEach>
+					</div>
+				</td>
+				<td>
+					<div>
+						<span>Event</span><br>
+						<c:forEach items="${listEvent}" var="listEvent">
+							<input type="hidden" name="idx" value='${listEvent.nIndex}'>
+							<a>${listEvent.strTitle }</a>
+							<br>
+						</c:forEach>
+					</div>
+				</td>
+				<td>
+					<div>
+						<span>Review</span><br>
+						<c:forEach items="${listReview}" var="listReview">
+							<input type="hidden" name="idx" value='${listReview.nIndex}'>
+							<a>${listReview.strTitle }</a>
+							<br>
+						</c:forEach>
+					</div>
+				</td>
+				<td><span>Q&A</span><br> <c:forEach items="${listQNA}"
+						var="listQNA">
+						<input type="hidden" name="idx" value='${listQNA.nIndex}'>
+						<a>${listQNA.strTitle }</a>
+						<br>
+					</c:forEach></td>
+			</tr>
+		</table>
+		<img style="width: 100%; height: auto;"
+			src='resources/banner/main.jpg'>
+		<jsp:include page="bestItem/bestItem.jsp"></jsp:include>
+		<div class="row">
+			<c:forEach items="${productList}" var="product">
+				<div class="col-xs-4" onclick="detailView(this)" style="margin-bottom: 40px">
+					<form name="listItem" action="productDetail">
+						<div>
+							<img style="width: 100%; height:380px;" class="fullWidth"
+								src='${product.img_path}'>
+						</div>
+						<div class="topMargin">${product.product_name}</div>
+						<div class="fullWidth topBorder colorGray"
+							style="margin-top: 5px; padding-top: 5px;">
+							<span style="font-size: 12px; color: #009ADB">${product.product_price}원</span><br>
+							<span style="font-size: 12px;">${product.color} Color /
+								${product.size} Size</span><br> <span style="font-size: 12px;">${product.product_subTitle}</span>
+						</div>
+						<input type="hidden" name="productID"
+							value="${product.product_ID}"> <input type="hidden"
+							name="category" value="${product.category}">
+					</form>
+				</div>
+			</c:forEach>
+		</div>
 
 	</div>
 </body>
+<jsp:include page="publicDiv/footer.jsp"></jsp:include>
 </html>
 

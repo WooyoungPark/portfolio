@@ -18,6 +18,12 @@
 		FROM product_tb
 		WHERE product_ID = #{nProductID}
 	</select>
+	
+	<select id="getProductAll" resultType ="productListVO">
+		SELECT product_ID, product_name, product_price, color, size, product_subTitle,
+			bPopularity, img_path, category
+		FROM product_tb
+	</select>
 </mapper>
  
  

@@ -24,4 +24,5 @@ import com.portfolio.dto.ProductVO;
 public interface ProductMapper {
 	public List<ProductListVO> getProductByCategory(int nCategory);
 	public ProductVO getProductByID(int nProductID);
+	public List<ProductListVO> getProductAll();
 }

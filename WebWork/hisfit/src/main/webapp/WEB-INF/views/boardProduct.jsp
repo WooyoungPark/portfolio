@@ -30,6 +30,7 @@
 			<thead>
 				<tr>
 					<th class="no textCenter">NO.</th>
+					<th class="img textCenter">PRODUCT</th>
 					<th class="title textCenter">SUBJECT</th>
 					<th class="writer textCenter">NAME</th>
 					<th class="date textCenter">DATE</th>
@@ -39,8 +40,9 @@
 				<c:forEach items="${boardList}" var="boardItem">
 				<tr>
 					<td class="no textCenter">${boardItem.nIndex}</td>
-					<td class="title">${boardItem.strTitle}</td>
-					<td class="writer textCenter">히즈핏</td>
+					<td class="img textCenter"><img src='${boardItem.strPath}'></td>
+					<td class="title2">${boardItem.strName}<br>${boardItem.strTitle}</td>
+					<td class="writer textCenter">${boardItem.strAuth}</td>
 					<td class="date textCenter">${boardItem.strDate}</td>
 				</tr>
 				</c:forEach>

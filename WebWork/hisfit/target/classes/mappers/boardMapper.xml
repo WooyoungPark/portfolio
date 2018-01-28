@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Mappers.BoardMapper">
+	<select id="getIndexByNotice" resultType="boardVO">
+		select notice_NO as nIndex,	title as strTitle, contents as strContents, 
+			   notice_date as strDate, bHeadline
+		from notice_tb;
+	</select>
+	<select id="getIndexByEvent" resultType="boardVO">
+		select event_NO as nIndex, title as strTitle, contents as strContents, 
+			   event_date as strDate, bHeadline 
+		from event_tb;
+	</select>
+	<select id="getIndexByReview" resultType="boardproductVO">
+		SELECT A.review_NO as nIndex, B.img_path as strPath, B.product_name as strName, 
+				A.title as strTitle, C.name as strAuth, A.review_date as strDate, true as bPrivate
+		FROM  REVIEW_TB A, PRODUCT_TB B, USERINFO C
+		WHERE A.product_ID = B.product_ID AND A.writer = C.ID;
+	</select>
+	<select id="getIndexByQNA" resultType="boardproductVO">
+		SELECT A.qna_NO as nIndex, B.img_path as strPath, B.product_name as strName, 
+				A.title as strTitle, C.name as strAuth, A.qna_date as strDate, A.bPrivate
+		FROM  QNA_TB A, PRODUCT_TB B, USERINFO C
+		WHERE A.product_ID = B.product_ID AND A.writer = C.ID;
+	</select>
+</mapper>
