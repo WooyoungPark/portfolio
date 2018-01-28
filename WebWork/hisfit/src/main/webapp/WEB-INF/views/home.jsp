@@ -16,8 +16,7 @@
 </head>
 <body>
 	<jsp:include page="publicDiv/menuBar.jsp"></jsp:include>
-	<div class="container">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style = "height:500px;">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -26,13 +25,13 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="resources/banner/Banner1.PNG" alt="Banner1">
+					<img style = "height:500px; width:auto; margin-left:auto; margin-right:auto;" src="resources/banner/Banner1.PNG" alt="Banner1">
 				</div>
 				<div class="item">
-					<img src="resources/banner/Banner2.PNG" alt="Banner2">
+					<img style = "height:500px; width:auto; margin-left:auto; margin-right:auto;" src="resources/banner/Banner2.PNG" alt="Banner2">
 				</div>
 				<div class="item">
-					<img src="resources/banner/Banner3.PNG" alt="Banner3">
+					<img style = "height:500px; width:auto; margin-left:auto; margin-right:auto;" src="resources/banner/Banner3.PNG" alt="Banner3">
 				</div>
 			</div>
 			<!-- Left and right controls -->
@@ -45,6 +44,8 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
+	<div class="container">
+		
 		<table class="mainBoard">
 			<tr>
 				<td>
